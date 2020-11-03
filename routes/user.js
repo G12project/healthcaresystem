@@ -18,18 +18,18 @@ router.post('/auth', function(req, res){
   		if (err) throw err;
   		console.log("Connected!");
 		var sql="SELECT * FROM hospital where id=? and Password=?";
-	 con.query(sql, [username,password], function (err, data1,fields) {
-    	 if (err) throw err;
-		 if (data1.length>0){
-			 req.session.loggedin= true;
-			 req.session.user=data1;
-			 res.redirect('/home');
-		 }
-		 else{
-			 res.send('Incorrect Username and/or Password!');
-			 res.redirect('/login');
-		 }
-    });
+		con.query(sql, [username,password], function (err, data1,fields) {
+    	 		if (err) throw err;
+			if (data1.length>0){
+			 	req.session.loggedin= true;
+			 	req.session.user=data1;
+			 	res.redirect('/home');
+			}
+		 	else{
+				res.send('Incorrect Username and/or Password!');
+				res.redirect('/login');
+		 	}
+    		});
 	});
 });
 router.get('/register', function (req, res) {
