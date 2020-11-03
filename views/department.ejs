@@ -56,9 +56,8 @@
 <body>
 	<div><h2><strong>Your Department....</strong></h2></div>
 	<div>
-		<form method="POST" action="">
+		<form method="POST" action="created">
 			<div>
-				<p><input type="text" value="<%=user.id%>" name="hid"/></p>
 		<p>
 		department:
 		<select name="d">
@@ -73,13 +72,15 @@
 			<td>S.no</td>
 			<td>Doctor name</td>
 			<td>Registraion no</td>
+			<td>Registred_state</td>
 			<td>start_point in24hrs</td>
 			<td>end_point in24hrs</td>
 		</tr>
 		<tr>
 			<td>1</td>
-			<td><input size=25 type="text" id="latbox" name="n1"/></td>
-			<td><input size=25 type="text" id="lngbox" name="n2"/></td>
+			<td><input size=25 type="text" id="latbox" name="docname"/></td>
+			<td><input size=25 type="text" id="lngbox" name="reg"/></td>
+			<td><input type="text" name="gstate" size="25" /></td>
 			<td><input size=25 type="number" name="startp" min="0000" max="2400" minlength="4" maxlength="4"/></td>
 			<td><input size=25 type="number" name="endp" min="0000" max="2400" minlength="4" maxlength="4"/></td>
 		</tr>
@@ -128,6 +129,5 @@ var i=1;
 	}
 </script>
 </body>
-</html>
-                                                        
+</html>                                               
                                             
