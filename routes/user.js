@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var alert=require('alert');
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -25,6 +26,7 @@ router.post('/auth', function(req, res){
 		else{
 			res.send('Incorrect Username and/or Password!');
 			res.redirect('/login');
+			alert("Wrong Username/Password");
 		 }
 	});
 });
@@ -86,5 +88,30 @@ router.post('/created', function(req, res) {
 	con.query(sql4, [values2], function (err, data) {
       if (err) throw err;
       console.log("r1 is inserted");
+	});
+	var sql5= "INSERT INTO schd (id, dname, reg, start, end) VALUES ?";
+	var values3=[
+		[req.sesssion.user.id, dep, regno, startp, endp]
+		];
+	con.query(sql5, [values3], function (err, data) {
+      if (err) throw err;
+      console.log("schd is inserted");
+	});
+	var sql6="SELECT reg FROM hospital where reg=?";
+	con.query(sql6, [regno], function (err, data2, fields) {
+    	 	if (err) throw err;
+		if (data2.length==0){
+			var sql7= "INSERT INTO doc(docname, reg, spl) VALUES ?";
+			var values4=[
+			[ docname,regno, dep]
+			];
+			con.query(sql7, [values4], function (err, data) {
+      			if (err) throw err;
+      			console.log("doc is inserted");
+		});
+		}
+	});
+	
+	
 });
 module.exports = router;
