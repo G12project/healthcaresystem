@@ -24,7 +24,6 @@ router.post('/auth', function(req, res){
 			 res.redirect('/home');
 		}
 		else{
-			res.send('Incorrect Username and/or Password!');
 			res.redirect('/login');
 			alert("Wrong Username/Password");
 		 }
