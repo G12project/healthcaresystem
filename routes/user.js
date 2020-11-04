@@ -81,37 +81,35 @@ router.post('/created', function(req, res) {
       if (err) throw err;
       console.log("r2 is inserted");
     });
-		var sql4= "INSERT INTO R1 (id,reg) VALUES ?";
-	var values2=[
-		[req.sesssion.user.id,regno]
-		];
-	con.query(sql4, [values2], function (err, data) {
-      if (err) throw err;
-      console.log("r1 is inserted");
-	});
-	var sql5= "INSERT INTO schd (id, dname, reg, start, end) VALUES ?";
-	var values3=[
-		[req.sesssion.user.id, dep, regno, startp, endp]
-		];
-	con.query(sql5, [values3], function (err, data) {
-      if (err) throw err;
-      console.log("schd is inserted");
-	});
-	var sql6="SELECT reg FROM hospital where reg=?";
-	con.query(sql6, [regno], function (err, data2, fields) {
-    	 	if (err) throw err;
-		if (data2.length==0){
-			var sql7= "INSERT INTO doc(docname, reg, spl) VALUES ?";
-			var values4=[
-			[ docname,regno, dep]
-			];
-			con.query(sql7, [values4], function (err, data) {
-      			if (err) throw err;
-      			console.log("doc is inserted");
-		});
-		}
-	});
-	
-	
+ for(var i=0; i<regno.length; i++){
+    var dn=docname[i];
+    var r=regno[i]+gstate[i];
+    var s=startp[i];
+    var e=endp[i];
+    var sql7 = "INSERT IGNORE INTO doc(docname, reg, spl) VALUES ?";
+    var values4 = [
+        [dn, r, dep]
+        ];
+        con.query(sql7, [values4], function (err, data) {
+          console.log("doc is inserted");
+        });
+  var sql4 = "INSERT INTO R1 (id,reg) VALUES ?";
+  var values2 = [
+    [req.session.user.id, r]
+  ];
+  con.query(sql4, [values2], function (err, data) {
+    if (err) throw err;
+    console.log("r1 is inserted");
+  });
+  var sql5 = "INSERT INTO schd (id, dname, reg, start, end) VALUES ?";
+  var values3 = [
+    [req.session.user.id, dep, r, s, e]
+  ];
+  con.query(sql5, [values3], function (err, data) {
+    if (err) throw err;
+    console.log("schd is inserted");
+  });
+  }
+  res.redirect('/home');
 });
 module.exports = router;
