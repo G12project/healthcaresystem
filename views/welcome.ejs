@@ -1,67 +1,58 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		* {
-			box-sizing: border-box;
-		}
+	
+		body{
+	margin: auto;
+	padding: 80px 40px 20px 40px;
+	width: 50%;
+	background-color: black;
+}
+	#jyoloveu{
+		margin: auto;
+		background-color: #5bc0de;
+		padding: 30px 20px 30px 20px;
+	}
+	#jyoiscute{
+		margin: auto;
+		
+		 font-size: 70px;
+ 	
+		 padding: 5px 5px 5px 5px;
+		 
+	}
 
-		.user-detail {
-			height: 100vh;
-			border: 2px solid #f1f1f1;
-			padding: 16px;
-			background-color: white;
-			width: 30%;
-		}
+	h1{
+		color: red;
+		font-size: 50px;
+	}
+	
+	p{
+		font-size: 20px;
+	}
 
-		input {
-			width: 100%;
-			padding: 15px;
-			margin: 5px 0 22px 0;
-			display: inline-block;
-			border: none;
-			background: #f1f1f1;
-		}
 
-		input[type=text]:focus,
-		input[type=password]:focus {
-			background-color: #ddd;
-			outline: none;
-		}
 
-		button[type=submit] {
-			background-color: #434140;
-			color: #ffffff;
-			padding: 10px 20px;
-			margin: 8px 0;
-			border: none;
-			cursor: pointer;
-			width: 100%;
-			opacity: 0.9;
-			font-size: 20px;
-		}
-
-		label {
-			font-size: 18px;
-			;
-		}
-
-		button[type=submit]:hover {
-			background-color: #3d3c3c;
-		}
 	</style>
 </head>
 
 <body>
-	<div class="user-detail">
-		<h2> Welcome</h2>
-		<p> You have successfully registered with us.</p>
-		<p> Your Username is <%=Uname%></p>
-		<p><i> Please always remember your username for login purposes.</i></p>
-		<p><b> NOTE: Your username is cannot be retrieved one lost</b></p> 
-		<p><strong> Verify your Account <strong></p>
-		<a href="login"> Click Here to Login</a>
+	<div id="jyoloveu">
+		<div id="jyoiscute"/>
+		<h1>     Welcome</h1>
+		<p >       You have successfully registered with us.</p>
+		<p >       Your Username is <%=Uname%></p>
+		<p ><i>    Please always remember your username for login purposes.</i></p>
+		<p><b> NOTE: Your username is cannot be retrieved once lost</b></p> 
+		<p ><strong>    Verify your Account </strong></p>
+		<a href="login" class="btn btn-default" role="button">       Click Here to Login</a>
+	</div>
+	</div>
 </body>
 
 </html>
