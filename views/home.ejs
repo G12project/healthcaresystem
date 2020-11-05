@@ -4,11 +4,20 @@
 	<title>welcome</title>
 </head>
 <body>
-	<div><h1>Welcome <%=user.id%> </h1></div>
+	<div><h1>Welcome Back <%=user.name%> </h1></div>
 	<div>
-		<p>
-	<a href="">logout</a>
-	<a href="">departments</a>
+		<p>About <%=user.name%></p>
+		<p><%=user.descp%></p>
+		<p> Equiped with <%=user.Beds%> beds and <%=user.Amb%> ambulances.</p>
+		<p> Address: <%=user.address%></p>
+		<p> Contact1: <%=user.contact1%></p>
+		<p> Contact2: <%=user.contact2%></p>
+		<p> Email: <%=user.email%></p>
+	<p>
+	<a href="department">Create Departments</a>
+	<form method="post" action="logout">
+		<button type="submit">Logout</button>
+	</form>
 </p>
 </div>
 </body>
