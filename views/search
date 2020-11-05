@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+</head>
+<body>
+	<div>
+	<a href="">login for hospital</a>
+</div>
+<div>
+	<form method="POST" action="" >
+	<div>
+		<select>
+			<option>category</option>
+			<option>departments</option>
+			<option>doctors</option>
+			<option>hospital</option>
+		</select>
+	</div>
+	<div>
+		<input type="text" name="search" placeholder="search" required>
+	</div>
+	<div>
+		<button type="submit">search</button>
+	</div>
+</div>
+</body>
+</html>
