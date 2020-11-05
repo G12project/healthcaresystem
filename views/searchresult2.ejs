@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>searchresult2</title>
+</head>
+<body>
+	<div>
+		<form>
+<table border="1">
+		<tr>
+			<th>hospital name</th>
+			<th>address</th>
+			<th>more info</th>
+		</tr>
+
+		<%
+	        if(user.length!=0){
+	        user.forEach(function(data){
+	        %>
+		<tr>
+			<td><input type="text" name="hos"><%=data.name %></td>
+			<td><%=data.address %></td>
+			<td><button type="submit">get</button></td>
+		</tr>
+		<% }) %>
+		<% } else{ %>
+		<tr>
+			<td colspan="7">No Data Found</td>
+		</tr>
+		<% } %>
+	</table>
+</form>
+</div>
+</body>
+</html>
