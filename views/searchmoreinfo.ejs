@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>search result1.0</title>
+</head>
+
+<body>
+	<div>
+		<table border="1">
+			<tr>
+				<th>Hospital</th>
+				<th>Speciality</th>
+				<th>Doctor</th>
+				<th>Start session</th>
+				<th>End session</th>
+				<th>contact1</th>
+				<th>contact2</th>
+				<th>address</th>
+			</tr>
+
+			<%
+	        if(user3.length!=0){
+	        user3.forEach(function(data){
+	        %>
+			<tr>
+				<td><%=data.name %></td>
+				<td><%=data.dname %></td>
+				<td><%=data.docname %></td>
+				<td><%=data.start %></td>
+				<td><%=data.end %></td>
+				<td><%=data.contact1 %></td>
+				<td><%=data.contact2%></td>
+				<td><%=data.address %></td>
+			</tr>
+			<% }) %>
+			<% } else{ %>
+			<tr>
+				<td colspan="7">No Data Found</td>
+			</tr>
+			<% } %>
+		</table>
+	</div>
+</body>
+
+</html>
