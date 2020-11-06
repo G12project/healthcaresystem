@@ -8,34 +8,45 @@
 </head>
 <style type="text/css">
 	.leftside , .rightside{
-		height: 100vh;
+		height: 120vh;
 		width: 100%;
 	}
 	.jyoissmart1{background-color: black;
 		color: white;
+		
 	}
 	.jyoissmart2{
 		background-color: #5bc0de;
 		color: black;
+		
 	}
 	table{
 		margin: auto;
-		border-width: 3px;
+		width: 90%;
+		border: 3px solid darkblue;
 	}
 	.jyoisbomb{
-		padding: 50px 30px 20px 30px;
+		padding: 30px 30px 20px 20px;
 	}
 	.iwannafuckher{
-		padding: 180px 5px 20px 20px;
+		padding: 90px 5px 20px 20px;
+	}
+	td{
+		border: 2px solid darkblue;
+
+	}
+	th{
+		border: 2px solid darkblue;
 	}
 </style>
 
 <body>
+	<div><h1><%=data.name %></h1></div>
 	<div class="row no gutters">
-  <div class="col-md-8 jyoissmart2">
+  <div class="col-md-8 jyoissmart2 no gutters">
   <div class="leftside">
   <div class="jyoisbomb">		
-  	<table border="1">
+  	<table border="2">
 			<tr>
 				<th>Speciality</th>
 				<th>Doctor</th>
@@ -63,25 +74,30 @@
 	</div>
 	</div>
 	</div>
-  <div class="col-md-4 jyoissmart1">
+  <div class="col-md-4 jyoissmart1 no gutters">
   	<div class="rightside">
+  			
   		<div class="row iwannafuckher">
-  <div class="col-md-2">
-  	<p>contact1</p>
-  	<p>  	contact2</p>
-  	<p>  	beds</p>
-  	<p>  	amb</p>
-  	<p>descp</p>
-  </div>
-  <div class="col-md-6">
+  			<p><h1>About</h1></p>
+  			<p><%=data.descp %></p>
+  <table>
+  	<tr><td></td></tr>
+  	<p>Location</p>
+  	<p>Contact1</p>
+  	<p>Contact2</p>
+  	<p>Email</p>
+  	<p>Beds</p>
+  	<p>Number of Ambulances</p>
+
+  	<p><%=data.address %></p>
   	<p><%=data.contact1 %></p>
   	<p><%=data.contact2 %></p>
+  	<p><%=data.email %></p>
   	<p><%=data.beds %></p>
   	<p><%=data.amb %></p>
-  	<p><%=data.descp %></p>
-  </div>
+  </table>
 </div>
 </div>
 </div>
-
 </body>
+
