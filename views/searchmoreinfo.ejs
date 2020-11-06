@@ -1,22 +1,46 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<title>search result1.0</title>
 </head>
+<style type="text/css">
+	.leftside , .rightside{
+		height: 100vh;
+		width: 100%;
+	}
+	.jyoissmart1{background-color: black;
+		color: white;
+	}
+	.jyoissmart2{
+		background-color: #5bc0de;
+		color: black;
+	}
+	table{
+		margin: auto;
+		border-width: 3px;
+	}
+	.jyoisbomb{
+		padding: 50px 30px 20px 30px;
+	}
+	.iwannafuckher{
+		padding: 180px 5px 20px 20px;
+	}
+</style>
 
 <body>
-	<div>
-		<table border="1">
+	<div class="row no gutters">
+  <div class="col-md-8 jyoissmart2">
+  <div class="leftside">
+  <div class="jyoisbomb">		
+  	<table border="1">
 			<tr>
-				<th>Hospital</th>
 				<th>Speciality</th>
 				<th>Doctor</th>
 				<th>Start session</th>
 				<th>End session</th>
-				<th>contact1</th>
-				<th>contact2</th>
-				<th>address</th>
 			</tr>
 
 			<%
@@ -24,14 +48,10 @@
 	        user3.forEach(function(data){
 	        %>
 			<tr>
-				<td><%=data.name %></td>
 				<td><%=data.dname %></td>
 				<td><%=data.docname %></td>
 				<td><%=data.start %></td>
 				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td><%=data.address %></td>
 			</tr>
 			<% }) %>
 			<% } else{ %>
@@ -41,6 +61,27 @@
 			<% } %>
 		</table>
 	</div>
-</body>
+	</div>
+	</div>
+  <div class="col-md-4 jyoissmart1">
+  	<div class="rightside">
+  		<div class="row iwannafuckher">
+  <div class="col-md-2">
+  	<p>contact1</p>
+  	<p>  	contact2</p>
+  	<p>  	beds</p>
+  	<p>  	amb</p>
+  	<p>descp</p>
+  </div>
+  <div class="col-md-6">
+  	<p><%=data.contact1 %></p>
+  	<p><%=data.contact2 %></p>
+  	<p><%=data.beds %></p>
+  	<p><%=data.amb %></p>
+  	<p><%=data.descp %></p>
+  </div>
+</div>
+</div>
+</div>
 
-</html>
+</body>
