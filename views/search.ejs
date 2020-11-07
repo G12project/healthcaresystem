@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>search</title>
 </head>
+
 <body>
 	<div>
-	<a href="">login for hospital</a>
-</div>
-<div>
-	<form method="POST" action="" >
-	<div>
-		<select>
-			<option>category</option>
-			<option>departments</option>
-			<option>doctors</option>
-			<option>hospital</option>
-		</select>
+		<a href="login">login for hospital</a>
 	</div>
 	<div>
-		<input type="text" name="search" placeholder="search" required>
+		<form method="POST" action="find">
+			<div>
+				<select name="cat">
+					<option>Category</option>
+					<option>Speciality</option>
+					<option>Doctors</option>
+					<option>Hospitals</option>
+				</select>
+			</div>
+			<div>
+				<input type="text" name="sch" placeholder="search" required>
+				<input name="currt" value="" required>
+			</div>
+			<div>
+				<button type="submit">search</button>
+			</div>
 	</div>
-	<div>
-		<button type="submit">search</button>
-	</div>
-</div>
 </body>
+
 </html>
