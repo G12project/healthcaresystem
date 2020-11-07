@@ -4,6 +4,22 @@
 	<title>search result1.0</title>
 </head>
 <body>
+	<style type="text/css">
+		body{
+			width: 80%;
+			margin: auto;
+			background-color: black;
+			color: white;
+
+		}
+		div{
+			background color: #00ff00;
+			padding: 50px 10px 20px 10px ;
+		}
+		table{
+			width: 95%;
+		}
+	</style>
 	<div>
 <table border="1">
 		<tr>
@@ -12,9 +28,9 @@
 				<th>Doctor</th>
 				<th>Start session</th>
 				<th>End session</th>
-				<th>contact1</th>
-				<th>contact2</th>
-				<th>address</th>
+				<th>Contact1</th>
+				<th>Contact2</th>
+				<th>Address</th>
 			</tr>
 
 			<%
@@ -29,7 +45,7 @@
 				<td><%=data.end %></td>
 			<td><%=data.contact1 %></td>
 			<td><%=data.contact2%></td>
-			<td><%=data.adress %></td>
+			<td><%=data.address %></td>
 		</tr>
 		<% }) %>
 		<% } else{ %>
