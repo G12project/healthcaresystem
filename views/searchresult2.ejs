@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>searchresult2</title>
 </head>
+
 <body>
 	<div>
-		<form>
-<table border="1">
-		<tr>
-			<th>hospital name</th>
-			<th>address</th>
-			<th>more info</th>
-		</tr>
+			<table border="1">
+				<tr>
+					<th>hospital name</th>
+					<th>address</th>
+					<th>more info</th>
+				</tr>
 
-		<%
-	        if(user.length!=0){
-	        user.forEach(function(data){
+				<%
+	        if(user2.length!=0){
+	        user2.forEach(function(data){
 	        %>
-		<tr>
-			<td><input type="text" name="hos"><%=data.name %></td>
-			<td><%=data.address %></td>
-			<td><button type="submit">get</button></td>
-		</tr>
-		<% }) %>
-		<% } else{ %>
-		<tr>
-			<td colspan="7">No Data Found</td>
-		</tr>
-		<% } %>
-	</table>
-</form>
-</div>
+				<tr>
+					<form method="POST" action="details">
+					<td><input name="hos" value="<%=data.name%>" readonly/></td>
+					<td><input name="add" value="<%=data.address%>" readonly /></td>
+					<td><button type="submit">Click to view details</button></td>
+					</form>
+				</tr>
+				<% }) %>
+				<% } else{ %>
+				<tr>
+					<td colspan="7">No Data Found</td>
+				</tr>
+				<% } %>
+			</table>
+	</div>
 </body>
+
 </html>
