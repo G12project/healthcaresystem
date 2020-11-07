@@ -2,15 +2,41 @@
 <html>
 
 <head>
+	
 	<title>searchresult2</title>
 </head>
+<style type="text/css">
+		body{
+			width: 90%;
+			margin: auto;
+			background-color: black;
+			color: white;
+
+		}
+		div{
+			background color: #01009c;
+			padding: 50px 10px 20px 60px ;
+		}
+		table{
+			width: 80%;
+		}
+		input{
+			color: white;
+			background-color: black;
+			border: solid black;
+		}
+		button{
+			background-color: #0d67c8;
+			color: white;
+		}
+	</style>
 
 <body>
 	<div>
 			<table border="1">
 				<tr>
-					<th>hospital name</th>
-					<th>address</th>
+					<th>Hospital name</th>
+					<th>Address</th>
 					<th>more info</th>
 				</tr>
 
@@ -22,7 +48,7 @@
 					<form method="POST" action="details">
 					<td><input name="hos" value="<%=data.name%>" readonly/></td>
 					<td><input name="add" value="<%=data.address%>" readonly /></td>
-					<td><button type="submit">Click to view details</button></td>
+					<td><button type="submit" class="btn btn-primary">Click to view details</button></td>
 					</form>
 				</tr>
 				<% }) %>
