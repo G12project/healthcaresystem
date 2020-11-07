@@ -4,14 +4,55 @@
 <head>
 	<title>search</title>
 </head>
-
+<style type="text/css">
+	body{
+		padding: 60px 20px 10px 10px;
+		margin: auto;
+		width: 50%;
+		background-color: black;
+	}
+	.container{
+		padding: 0px 0px 10px 0px;
+		background-color: #5bc0de;
+	}
+	.onedayiwillfuckherhard{
+		padding-left: 450px;
+		
+		background-color: white;
+	}
+	.onedayiwillfuckherhard1{
+		padding: 10px 2px 10px 10px;
+	}
+	.onedayiwillfuckherhard2{
+		padding: 10px 2px 10px 50px;
+		width: 200px;
+	}
+	.onedayiwillfuckherhard3{
+		padding: 10px 2px 10px 50px;
+	}
+	.onedayiwillfuckherhard4{
+		padding: 10px 2px 10px 50px;
+	}
+	#search{
+		width: 300px;
+		height: 25px;
+		font-size: 20px;
+	}
+	#jyo{
+		width: 80px;
+		height: 30px;
+		background-color: black;
+		color: #5bc0de;
+	}
+</style>
 <body>
-	<div>
+	<div class="container">
+	<div class="onedayiwillfuckherhard">
 		<a href="login">login for hospital</a>
 	</div>
 	<div>
 		<form method="POST" action="find">
-			<div>
+			<div class="onedayiwillfuckherhard1">
 				<select name="cat">
 					<option>Category</option>
 					<option>Speciality</option>
@@ -19,14 +60,23 @@
 					<option>Hospitals</option>
 				</select>
 			</div>
-			<div>
-				<input type="text" name="sch" placeholder="search" required>
-				<input name="currt" value="" required>
+			<div class="onedayiwillfuckherhard2">
+				<input type="text" name="sch" placeholder="search" id="search" required/>
+				</div>
+				<div class="onedayiwillfuckherhard3">
+				<input id="fucku" name="currt" value=""  required/>
+			
+			<div class="onedayiwillfuckherhard4">
+				<button type="submit" id="jyo">search</button>
 			</div>
-			<div>
-				<button type="submit">search</button>
-			</div>
+		</form>
 	</div>
-</body>
+</div>
 
+<script>
+  var d = new Date();
+  var n = d.getHours();
+  document.getElementById("fucku").value = n*100;
+</script>
+</body>
 </html>
