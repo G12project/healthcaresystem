@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 <head>
+
 	<title>welcome</title>
 </head>
+<style type="text/css">
+	body{
+			margin: auto;
+			padding: 70px 30px 10px 30px;
+			width: 70%;
+			background-color: black;
+		}
+		#container{
+			margin: auto;
+			font-size: 15px;
+			background-color: white;
+			padding :15px 10px 10px 10px;
+		}
+	#head{
+				padding: 1px 5px 5px 5px;
+				background-color: #428bca;
+				color: white;
+				font-family: 'Open Sans', sans-serif;
+			}
+			#about{
+				padding: 5px 5px 5px 5px;
+				font-size: 20px;
+				font-family: 'Open Sans', sans-serif;
+			}
+			#href{
+				padding: 5px 5px 5px 5px;
+				font-size: 20px;
+			}
+
+	
+</style>
 <body>
-	<div><h1>Welcome Back <%=user.name%> </h1></div>
-	<div>
+	<div id="container">
+	<div id="head"><h1>Welcome Back <%=user.name%> </h1></div>
+	<div id="about">
 		<p>About <%=user.name%></p>
 		<p><%=user.descp%></p>
 		<p> Equiped with <%=user.Beds%> beds and <%=user.Amb%> ambulances.</p>
@@ -13,12 +48,15 @@
 		<p> Contact1: <%=user.contact1%></p>
 		<p> Contact2: <%=user.contact2%></p>
 		<p> Email: <%=user.email%></p>
-	<p>
+	</div>
+	<div id="href">
 	<a href="department">Create Departments</a>
+</div>
+<div id="form">
 	<form method="post" action="logout">
-		<button type="submit">Logout</button>
+		<button type="submit" class="btn btn-success">Logout</button>
 	</form>
-</p>
+</div>
 </div>
 </body>
 </html>
