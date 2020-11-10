@@ -18,10 +18,16 @@ router.post('/find', function (req, res) {
   var op=req.body.cat;
   var kw=req.body.sch;
   var tm=req.body.currt;
+  var dy=parseInt(req.body.day1);
   if(op=="Speciality")
   {
-    var sqll = "Select schd.dname, schd.start, schd.end, doc.docname, hospital.name, hospital.address, hospital.contact1, hospital.contact2 from schd, doc, hospital where schd.dname=? and schd.start>=? and doc.reg=schd.reg and hospital.id=schd.id order by schd.start";
-    con.query(sqll, [kw, tm], function(err, data20, fields){
+    if(dy!=0)
+    var sqll = "Select schd.dname, schd.start, schd.end, schd.day, doc.docname, hospital.name, hospital.address, hospital.contact1, hospital.contact2 from schd, doc, hospital where schd.dname=? and schd.end>=? and schd.day=? and doc.reg=schd.reg and hospital.id=schd.id order by schd.start";
+    else{
+      var sqll="Select schd.dname, schd.start, schd.end, schd.day, doc.docname, hospital.name, hospital.address, hospital.contact1, hospital.contact2 from schd, doc, hospital where schd.dname=? and schd.end>=? and schd.day>=? and doc.reg=schd.reg and hospital.id=schd.id order by schd.start";
+      dy=parseInt(req.body.currd);
+    }
+    con.query(sqll, [kw, tm, dy], function(err, data20, fields){
       if (err) throw err;
       req.session.ans=data20;
       res.redirect('/searchresult1');
@@ -29,7 +35,7 @@ router.post('/find', function (req, res) {
   }
    else if(op=="Doctors")
   {
-    var sqll1 = "Select schd.dname, schd.start, schd.end, doc.docname, hospital.name, hospital.address, hospital.contact1, hospital.contact2 from schd, doc, hospital where schd.reg IN (Select reg from doc where doc.docname= ? ) and schd.start>=? and doc.reg=schd.reg and hospital.id=schd.id order by schd.start";
+    var sqll1 = "Select schd.dname, schd.start, schd.end, doc.docname, hospital.name, hospital.address, hospital.contact1, hospital.contact2 from schd, doc, hospital where schd.reg IN (Select reg from doc where doc.docname= ? ) and schd.end>=? and doc.reg=schd.reg and hospital.id=schd.id order by schd.start";
     con.query(sqll1, [kw, tm], function(err, data30, fields){
       if(err) throw err;
       req.session.ans=data30;
@@ -79,10 +85,10 @@ router.post('/auth', function (req, res) {
     var sql = "SELECT * FROM hospital where id=?";
     con.query(sql, [username], function (err, data1, fields) {
       if (err) throw err;
-      console.log(data1);
         bcrypt.compare(password, data1[0].Password, function (err, result) {
         if (result == true) {
           req.session.user=data1[0];
+          req.session.log=true;
           res.redirect('/home');
         } else {
           alert("Wrong Username/Password");
@@ -92,7 +98,10 @@ router.post('/auth', function (req, res) {
     });
   });
 router.get('/home', function(req, res){
+  if(req.session.log)
   res.render('home', { user: req.session.user});
+  else
+  res.redirect('/login');
 });
 router.post('/logout', function(req, res){
   req.session.destroy();
@@ -135,7 +144,10 @@ router.get('/welcome', function (req, res) {
   res.render('welcome', { Uname: req.session.uname});
 });
 router.get('/department', function (req, res) {
+  if(req.session.log)
   res.render('department');
+  else
+  res.redirect('/login');
 });
 router.post('/created', function (req, res) {
   var dep = req.body.d;
@@ -144,26 +156,21 @@ router.post('/created', function (req, res) {
   var gstate=(req.body.gstate);
   var startp = (req.body.startp);
   var endp = req.body.endp;
+  var day=req.body.day;
   var c=req.body.cnt;
-  var sql3 = "INSERT IGNORE INTO R2 (id,dname) VALUES ?";
-  var values1 = [
-    [req.session.user.id, dep]
-  ];
-  con.query(sql3, [values1], function (err, data) {
-    if (err) throw err;
-    console.log("r2 is inserted");
-  });
   for(var i=0; i<c; i++){
     var dn=docname[i];
     var r=regno[i]+gstate[i];
-    var s=parseInt(startp[i]);
+    var s=(startp[i]);
     var e=parseInt(endp[i]);
+    var d=parseInt(day[i]);
     if(c==1)
     {
       dn=docname;
       r=regno+gstate;
-      s=parseInt(startp);
+      s=(startp);
       e=parseInt(endp);
+      d=parseInt(day);
     }
     var sql7 = "INSERT IGNORE INTO doc(docname, reg, spl) VALUES ?";
     var values4 = [
@@ -172,17 +179,9 @@ router.post('/created', function (req, res) {
         con.query(sql7, [values4], function (err, data) {
           console.log("doc is inserted");
         });
-  var sql4 = "INSERT IGNORE INTO R1 (id,reg) VALUES ?";
-  var values2 = [
-    [req.session.user.id, r]
-  ];
-  con.query(sql4, [values2], function (err, data) {
-    if (err) throw err;
-    console.log("r1 is inserted");
-  });
-  var sql5 = "INSERT INTO schd (id, dname, reg, start, end) VALUES ?";
+  var sql5 = "INSERT IGNORE INTO schd (id, dname, reg, start, end, day) VALUES ?";
   var values3 = [
-    [req.session.user.id, dep, r, s, e]
+    [req.session.user.id, dep, r, s, e, d]
   ];
   con.query(sql5, [values3], function (err, data) {
     if (err) throw err;
