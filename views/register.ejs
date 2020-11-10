@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>doctors application form</title>
-</head>
-<body>
-<div>
-<h2>Hospital form</h2>
-</div>
-<div class="user-detail">
-	<form action="/user/create" method="POST">
-		<div>
-		<p> <label>Name</label>
-          <input type="text" placeholder="Name" name="fname" required></p>
-         <p> <label>Address</label>
-          <input type="text" placeholder="Address" name="address" required></p>
-         <p> <label>Contact1</label>
-          <input type="number" placeholder="Contact" name="contact1" required></p>
-         <p> <label>Contact2</label>
-          <input type="number" placeholder="Contact" name="contact2"></p>
-         <p> <label>Email</label>
-          <input type="email" placeholder="Email" name="email" required></p>
-         <p> <label>Description</label>
-          <input type="text" placeholder="Description" name="descp"></p>
-         <p> <label>Beds</label>
-          <input type="number" placeholder="Beds" name="Beds"></p>
-         <p> <label>Ambulances</label>
-          <input type="number" placeholder="Ambulances" name="Amb"></p>
-          <p> <label>password</label>
-          <input type="password" placeholder="password" name="password"></p>
-      </div>
-		<button type="submit">register</button>
-	</form>
-</div>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hospital Registration</title>
+	<style>
+		body {
+			margin: auto;
+			padding: 70px 30px 10px 30px;
+			width: 80%;
+			background-color: black;
+		}
+
+		#container {
+			margin: auto;
+			font-size: 15px;
+			background-color: white;
+			padding: 15px 10px 10px 10px;
+		}
+		#head {
+			padding: 1px 5px 5px 5px;
+			background-color: #428bca;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+		}
+		#ilj {
+			margin: auto;
+			width: 300px;
+			font-size: 18px;
+		}
+		#downbar {
+			font-size: 15px;
+			padding-bottom: 10px;
+			padding-top: 15px;
+		}
+		input{
+			width: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+	<div id="head">
+		<h2><strong>Hospital Details</strong></h2>
+	</div>
+	<div id="downbar">
+		<form action="create" method="POST">
+			<div>
+				<p> <label>Name</label></p>
+					<p><input type="text" placeholder="Name" name="fname" required></p>
+				<p> <label>Address</label></p>
+				<p>	<input type="text" placeholder="Address" name="address" required></p>
+				<p> <label>Contact1</label></p>
+				<p>	<input type="number" placeholder="Contact" name="contact1" required></p>
+				<p> <label>Contact2</label></p>
+				<p><input type="number" placeholder="Contact" name="contact2"></p>
+				<p> <label>Email</label></p>
+				<p>	<input type="email" placeholder="Email" name="email" required></p>
+				<p> <label>Description</label></p>
+				<p>	<input type="text" placeholder="Description" name="descp"></p>
+				<p> <label>Beds</label></p>
+				<p>	<input type="number" placeholder="Beds" name="Beds"></p>
+				<p> <label>Ambulances</label></p>
+				<p> <input type="number" placeholder="Ambulances" name="Amb"></p>
+				<p> <label>password</label></p>
+				<p>	<input type="password" placeholder="password" name="password"></p>
+				<p>	<button type="submit" class="btn btn-success" id="ilj"> Register </button></p>
+			</div>
+			</form>
+		</div>
+	</div>
 </body>
+
 </html>
