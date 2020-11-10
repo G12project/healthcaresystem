@@ -1,71 +1,61 @@
 <html>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		* {
-			box-sizing: border-box;
+	body {
+			margin: auto;
+			padding: 70px 30px 10px 30px;
+			width: 80%;
+			background-color: black;
 		}
-
-		.user-detail {
-			height: 100vh;
-			border: 2px solid #f1f1f1;
-			padding: 16px;
+	#container {
+			margin: auto;
+			font-size: 15px;
 			background-color: white;
-			width: 30%;
+			padding: 15px 10px 10px 10px;
 		}
-
-		input {
-			width: 100%;
-			padding: 15px;
-			margin: 5px 0 22px 0;
-			display: inline-block;
-			border: none;
-			background: #f1f1f1;
-		}
-
-		input[type=text]:focus,
-		input[type=password]:focus {
-			background-color: #ddd;
-			outline: none;
-		}
-
-		button[type=submit] {
-			background-color: #434140;
-			color: #ffffff;
-			padding: 10px 20px;
-			margin: 8px 0;
-			border: none;
-			cursor: pointer;
-			width: 100%;
-			opacity: 0.9;
-			font-size: 20px;
-		}
-
-		label {
+	#ilj {
+			margin: auto;
+			width: 300px;
 			font-size: 18px;
-			;
 		}
-
-		button[type=submit]:hover {
-			background-color: #3d3c3c;
+	#head {
+			padding: 1px 5px 5px 5px;
+			background-color: #428bca;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
 		}
+	#downbar {
+			font-size: 15px;
+			padding-bottom: 10px;
+			padding-top: 15px;
+		}
+	#yash{
+		font-size:15px;
+	}
 	</style>
 </head>
-
 <body>
-	<div><p> Don't Have An Account?</p>
-	<p><a href='register'> Register </a></p>
-	</div>
-	<div class="user-detail">
-		<h2>Login</h2>
+	<div id="container">
+		<div id="head">
+			<h2><strong>Login</strong></h2>
+		</div>
+		<div id="downbar">
 		<form action="auth" method="POST">
 			<p><input type="text" placeholder="Username" name="un" required></p>
 			<p><input type="password" placeholder="Password" name="pass" required></p>
-			<button type="submit">Login</button>
+			<button type="submit" class="btn btn-success" id="ilj"> Login </button>
+			<div id="yash">
+				<p> Don't Have An Account?
+				<a href='register'> Register </a></p>
+			</div>
 		</form>
+		</div>
 	</div>
-
+</div>
 </body>
 
 </html>
