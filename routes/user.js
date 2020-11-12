@@ -191,4 +191,16 @@ router.post('/created', function (req, res) {
   alert("Your Data is Inserted. Go back to home to finish");
   res.redirect('/department');
 });
+router.post('/edit', function(req, res){
+ var depname=req.body.deptn;
+ var sql30="select schd.day,schd.reg,schd.start,schd.end,doc.docname FROM schd,doc where schd.dname=? and schd.reg=doc.reg";
+	con.query(sql30,[depname],function(err,sds,fields){
+		if (err) throw err;
+		req.session.ed=sds;
+		res.redirect('/editp');
+	});
+});
+router.get('/editp', function (req, res) {
+  res.render('editp', { user20: req.session.ed});
+});
 module.exports = router;
