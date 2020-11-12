@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<title>searchresult2</title>
 </head>
@@ -13,25 +14,21 @@
 		color: white;
 		padding: 50px 20px 20px 50px;
 	}
-
 	div {
 		background-color: #5bc0de;
 		padding: 50px 10px 20px 60px;
 	}
-
 	table {
 		width: 95%;
 		color: black;
 		border-color: black;
 	}
-
 	input {
 		color: black;
 		background-color: #5bc0de;
 		border: solid #5bc0de;
 		width: 100%;
 	}
-
 	button {
 		background-color: #0d67c8;
 		color: white;
@@ -42,12 +39,18 @@
 	<div>
 		<table border="1">
 			<tr>
-				<th></th>
-				<th>Address</th>
-				<th>More Info</th>
+				<th>S.no</th>
+				<th>day</th>
+				<th>doctor name</th>
+				<th>registration name</th>
+				<th>session start</th>
+				<th>session end</th>
+				<th>save option</th>
+				<th>delete option</th>
 			</tr>
 
 			<%
+			var i=1;
 			var a=new Array();
 			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
 	        if(user20.length!=0){
@@ -55,19 +58,27 @@
 	        %>
 			<tr>
 				<form method="POST" action="details">
-					<td><input name="day" value="<%=a[data.day-1]%>" readonly /></td>
+					<td><input value="<%=i%>" name="sno" readonly/></td>
+					<td><select ><option><%=a[data.day-1]%></option>
+						<option value="2">Monday</option>
+						<option value="3">tuesday</option>
+						<option value="4">wednesday</option>
+						<option value="5">thursday</option>
+						<option value="6">friday</option>
+						<option value="7">saturday</option>
+						<option value="1">sunday</option>
+						</select></td>
 					<td><input name="docname" value="<%=data.docname%>" /></td>
 					<td><input name="regno" value="<%=data.reg%>" /></td>
 					<td><input name="session_start" value="<%=data.start%>" /></td>
 					<td><input name="session_end" value="<%=data.end%>" /></td>
-					<td><button type="submit" class="btn btn-primary">Click to view details</button></td>
+					<td><button type="submit" class="btn btn-primary"/>save changes</button></td>
+					<td><button type="submit" class="btn btn-danger"/>delete row</button></td>
 				</form>
 			</tr>
-			<% }) %>
+			<% i++; }) %>
 			<% } else{ %>
-			<tr>
-				<td colspan="7">No Data Found</td>
-			</tr>
+			
 			<% } %>
 		</table>
 	</div>
