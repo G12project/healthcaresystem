@@ -5,78 +5,119 @@
 	<title>search</title>
 </head>
 <style type="text/css">
-	body{
+	body {
 		padding: 60px 20px 10px 10px;
 		margin: auto;
 		width: 50%;
 		background-color: black;
 	}
-	.container{
+
+	.container {
 		padding: 0px 0px 10px 0px;
 		background-color: #5bc0de;
 	}
-	.onedayiwillfuckherhard{
+
+	.odiwfhh {
 		padding-left: 450px;
-		
+
 		background-color: white;
 	}
-	.onedayiwillfuckherhard1{
+
+	.odiwfhh1 {
 		padding: 10px 2px 10px 10px;
 	}
-	.onedayiwillfuckherhard2{
-		padding: 10px 2px 10px 50px;
+
+	.odiwfhh2 {
+		padding: 10px 2px 15px 50px;
 		width: 200px;
 	}
-	.onedayiwillfuckherhard3{
+
+	.odiwfhh3 {
+		padding: 10px 0px 10px 50px;
+		background-color: #5bc0de;
+		color: black;
+	}
+
+	.odiwfhh4 {
 		padding: 10px 2px 10px 50px;
 	}
-	.onedayiwillfuckherhard4{
-		padding: 10px 2px 10px 50px;
-	}
-	#search{
+
+	#search {
 		width: 300px;
 		height: 25px;
 		font-size: 20px;
 	}
-	#jyo{
+	#fy{
+		background-color: #5bc0de;
+		color: black;
+		border: 0px;
+	}
+
+	#jyo {
 		width: 80px;
 		height: 30px;
 		background-color: black;
 		color: #5bc0de;
 	}
+	#dum{
+		width: 80px;
+		height: 30px;
+		border: 30px;
+		border-color:black;
+	}
 </style>
+
 <body>
 	<div class="container">
-	<div class="onedayiwillfuckherhard">
-		<a href="login">login for hospital</a>
-	</div>
-	<div>
-		<form method="POST" action="find">
-			<div class="onedayiwillfuckherhard1">
-				<select name="cat">
-					<option>Category</option>
-					<option>Speciality</option>
-					<option>Doctors</option>
-					<option>Hospitals</option>
-				</select>
-			</div>
-			<div class="onedayiwillfuckherhard2">
-				<input type="text" name="sch" placeholder="search" id="search" required/>
+		<div class="odiwfhh">
+			<a href="login">login for hospital</a>
+		</div>
+		<div>
+			<form method="POST" action="find">
+				<div class="odiwfhh1">
+					<select name="cat" id="dum">
+						<option>Category</option>
+						<option>Speciality</option>
+						<option>Doctors</option>
+						<option>Hospitals</option>
+					</select>
+					<select name="day1" id="dum">
+						<option value="0">All Week</option>
+						<option value="2">Monday</option>
+						<option value="3">Tuesday</option>
+						<option value="4">Wednesday</option>
+						<option value="5">Thursday</option>
+						<option value="6">Friday</option>
+						<option value="7">Saturday</option>
+						<option value="1">Sunday</option>
+					</select>
 				</div>
-				<div class="onedayiwillfuckherhard3">
-				<input id="fucku" name="currt" value=""  required/>
-			
-			<div class="onedayiwillfuckherhard4">
-				<button type="submit" id="jyo">search</button>
-			</div>
-		</form>
-	</div>
-</div>
+				<div class="odiwfhh2">
+					<input type="text" name="sch" placeholder="search" id="search" required />
+				</div>
+				<div class="odiwfhh3">
+					<p id="idk"></p>
+					<input id="ysh" name="currd" value="" required readonly hidden />
+					<input id="fy" name="currt" value="" required readonly/>
+				</div>
 
-<script>
-  var d = new Date();
-  var n = d.getHours();
-  document.getElementById("fucku").value = n*100;
-</script>
+					<div class="odiwfhh4">
+						<button type="submit" id="jyo">search</button>
+					</div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		var a=new Array();
+		a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+		var d=new Date();
+		var n=("0" + ((d.getHours()*100)+d.getMinutes())).slice(-4)
+		var m=d.getDay()+1;
+		document.getElementById("fy").value=n;
+		document.getElementById("ysh").value=m;
+		document.getElementById("idk").innerText=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+", "+a[d.getDay()];
+	</script>
 </body>
+
 </html>
