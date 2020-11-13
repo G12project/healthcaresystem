@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>search</title>
 </head>
 <style type="text/css">
@@ -77,10 +78,11 @@
 				<div class="odiwfhh1">
 					<select name="cat" id="dum">
 						<option>Category</option>
-						<option>Speciality</option>
-						<option>Doctors</option>
+						<option value="copy">Speciality</option>
+						<option value="copy">Doctors</option>
 						<option>Hospitals</option>
 					</select>
+					<div id="copy" class="one" hidden>
 					<select name="day1" id="dum">
 						<option value="0">All Week</option>
 						<option value="2">Monday</option>
@@ -91,6 +93,7 @@
 						<option value="7">Saturday</option>
 						<option value="1">Sunday</option>
 					</select>
+				</div>
 				</div>
 				<div class="odiwfhh2">
 					<input type="text" name="sch" placeholder="search" id="search" required />
@@ -109,6 +112,12 @@
 	</div>
 
 	<script>
+		$(function() {
+        $('#dum').change(function(){
+            $('.one').hide();
+            $('#' + $(this).val()).show();
+        });
+    });
 		var a=new Array();
 		a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
 		var d=new Date();
@@ -121,3 +130,4 @@
 </body>
 
 </html>
+
