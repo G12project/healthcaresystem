@@ -10,7 +10,6 @@
 			margin: auto;
 			background-color: black;
 			color: white;
-
 		}
 		div{
 			background color: #00ff00;
@@ -26,6 +25,7 @@
 			<th>Hospital</th>
 				<th>Speciality</th>
 				<th>Doctor</th>
+				<th>Day</th>
 				<th>Start session</th>
 				<th>End session</th>
 				<th>Contact1</th>
@@ -34,6 +34,9 @@
 			</tr>
 
 			<%
+			var i=1;
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
 	        if(user1.length!=0){
 	        user1.forEach(function(data){
 	        %>
@@ -41,6 +44,55 @@
 				<td><%=data.name %></td>
 				<td><%=data.dname %></td>
 				<td><%=data.docname %></td>
+				<td><%=a[data.day-1]%></td>
+				<td><%=data.start %></td>
+				<td><%=data.end %></td>
+			<td><%=data.contact1 %></td>
+			<td><%=data.contact2%></td>
+			<td><%=data.address %></td>
+		</tr>
+		<% }) %>
+		<% } else{ %>
+		<tr>
+			<td colspan="7">No Data Found</td>
+		</tr>
+		<% } %>
+		<%
+			var i=1;
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+	        if(user2.length!=0){
+	        user1.forEach(function(data){
+	        %>
+			<tr>
+				<td><%=data.name %></td>
+				<td><%=data.dname %></td>
+				<td><%=data.docname %></td>
+				<td><%=a[data.day-1]%></td>
+				<td><%=data.start %></td>
+				<td><%=data.end %></td>
+			<td><%=data.contact1 %></td>
+			<td><%=data.contact2%></td>
+			<td><%=data.address %></td>
+		</tr>
+		<% }) %>
+		<% } else{ %>
+		<tr>
+			<td colspan="7">No Data Found</td>
+		</tr>
+		<% } %>
+		<%
+			var i=1;
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+	        if(user1.length!=0){
+	        user3.forEach(function(data){
+	        %>
+			<tr>
+				<td><%=data.name %></td>
+				<td><%=data.dname %></td>
+				<td><%=data.docname %></td>
+				<td><%=a[data.day-1]%></td>
 				<td><%=data.start %></td>
 				<td><%=data.end %></td>
 			<td><%=data.contact1 %></td>
