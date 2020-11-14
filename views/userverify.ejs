@@ -7,6 +7,36 @@
 
 <body>
 	<div>
+	<%
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+			%>
+		<div>
+			<h3>Your appointment information</h3>
+		</div>
+		<div>
+		<table>
+			<tr>
+				<td>Doctor Name</td>
+				<td><%=data.docname%></td>
+			</tr>
+			<tr>
+				<td>Department Name</td>
+				<td><%=data.depname%></td>
+			</tr>
+			<tr>
+				<td>Day</td>
+				<td><%=a[data.day-1]%></td>
+			</tr>
+			<tr>
+				<td>Start session</td>
+				<td><%=data.startp%></td>
+			</tr>
+			<tr>
+				<td>End session</td>
+				<td><%=data.endp%></td>
+			</tr>
+		</table>
 		<form method="POST" action="verification">
 			<div>
 				<label for="email">E-mail</label>
