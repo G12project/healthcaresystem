@@ -1,103 +1,126 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<title>search result1.0</title>
 </head>
 <style type="text/css">
-	.leftside , .rightside{
-		height: 120vh;
+	.leftside,
+	.rightside {
+		height: 100vh;
 		width: 100%;
 	}
-	.jyoissmart1{background-color: black;
+
+	.jyoissmart1 {
+		background-color: black;
 		color: white;
-		
+
 	}
-	.jyoissmart2{
+
+	.jyoissmart2 {
 		background-color: #5bc0de;
 		color: black;
-		
+
 	}
-	table{
+
+	.t1 {
 		margin: auto;
 		width: 90%;
 		border: 3px solid darkblue;
 	}
-	.jyoisbomb{
+	.t2{
+		margin:auto;
+		width:60%;
+		color:beige;
+	}
+
+	.jyoisbomb {
 		padding: 30px 30px 20px 20px;
 	}
-	.iwannafuckher{
-		padding: 90px 5px 20px 20px;
-	}
-	td{
-		border: 2px solid darkblue;
 
+	.iwannafuckher {
+		padding: 50px 5px 20px 20px;
 	}
-	th{
-		border: 2px solid darkblue;
+	.fine{
+		padding-left: 180px;
+		margin: auto;
 	}
+
 </style>
 
 <body>
-	<div><h1><%=data.name %></h1></div>
+	<div class="fine">
+		<h1><%=user4[0].name %></h1>
+	</div>
 	<div class="row no gutters">
-  <div class="col-md-8 jyoissmart2 no gutters">
-  <div class="leftside">
-  <div class="jyoisbomb">		
-  	<table border="2">
-			<tr>
-				<th>Speciality</th>
-				<th>Doctor</th>
-				<th>Start session</th>
-				<th>End session</th>
-			</tr>
+		<div class="col-md-8 jyoissmart2 no gutters">
+			<div class="leftside">
+				<div class="jyoisbomb">
+					<table class="t1" border="2">
+						<tr>
+							<th>Speciality</th>
+							<th>Doctor</th>
+							<th>Start session</th>
+							<th>End session</th>
+						</tr>
 
-			<%
+						<%
 	        if(user3.length!=0){
 	        user3.forEach(function(data){
 	        %>
-			<tr>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-			</tr>
-			<% }) %>
-			<% } else{ %>
-			<tr>
-				<td colspan="7">No Data Found</td>
-			</tr>
-			<% } %>
-		</table>
-	</div>
-	</div>
-	</div>
-  <div class="col-md-4 jyoissmart1 no gutters">
-  	<div class="rightside">
-  			
-  		<div class="row iwannafuckher">
-  			<p><h1>About</h1></p>
-  			<p><%=data.descp %></p>
-  <table>
-  	<tr><td></td></tr>
-  	<p>Location</p>
-  	<p>Contact1</p>
-  	<p>Contact2</p>
-  	<p>Email</p>
-  	<p>Beds</p>
-  	<p>Number of Ambulances</p>
+						<tr>
+							<td><%=data.dname %></td>
+							<td><%=data.docname %></td>
+							<td><%=data.start %></td>
+							<td><%=data.end %></td>
+						</tr>
+						<% }) %>
+						<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 jyoissmart1 no gutters">
+			<div class="rightside">
 
-  	<p><%=data.address %></p>
-  	<p><%=data.contact1 %></p>
-  	<p><%=data.contact2 %></p>
-  	<p><%=data.email %></p>
-  	<p><%=data.beds %></p>
-  	<p><%=data.amb %></p>
-  </table>
-</div>
-</div>
-</div>
+				<div class="row iwannafuckher">
+					<p>
+						<h1>About</h1>
+					</p>
+					<p><%=user4[0].descp%></p>
+					<table class="t2">
+						<tr>
+						<td>Location</td>
+						<td><%=user4[0].address %></td>
+						</tr>
+						<tr>
+						<td>Contact</td>
+						<td><%=user4[0].contact1 %></td>
+						</tr>
+						<tr>
+						<td></td>
+						<td><%=user4[0].contact2 %></td>
+						</tr>
+						<tr>
+						<td>Email</td>
+						<td><%=user4[0].email %></td>
+						</tr>
+						<tr>
+						<td>Beds</td>
+						<td><%=user4[0].Beds %></td>
+						</tr>
+						<tr>
+						<td>Ambulances</td>
+						<td><%=user4[0].Amb %></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
 </body>
-
