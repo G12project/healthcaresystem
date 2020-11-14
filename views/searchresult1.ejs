@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>search result1.0</title>
 </head>
+
 <body>
 	<style type="text/css">
-		body{
+		body {
 			width: 80%;
 			margin: auto;
 			background-color: black;
 			color: white;
 		}
-		div{
-			background color: #00ff00;
-			padding: 50px 10px 20px 10px ;
+
+		div {
+			background-color: blue;
+			padding: 50px 10px 20px 10px;
 		}
-		table{
+
+		table {
 			width: 95%;
 		}
 	</style>
 	<div>
-<table border="1">
-		<tr>
-			<th>Hospital</th>
+		<table border="1">
+			<tr>
+				<th>Hospital</th>
 				<th>Speciality</th>
 				<th>Doctor</th>
 				<th>Day</th>
@@ -34,11 +38,8 @@
 			</tr>
 
 			<%
-			var i=1;
-			var a=new Array();
-			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
-	        if(user1.length!=0){
-	        user1.forEach(function(data){
+	        if(user10.length!=0){
+	        user10.forEach(function(data){
 	        %>
 			<tr>
 				<td><%=data.name %></td>
@@ -47,22 +48,15 @@
 				<td><%=a[data.day-1]%></td>
 				<td><%=data.start %></td>
 				<td><%=data.end %></td>
-			<td><%=data.contact1 %></td>
-			<td><%=data.contact2%></td>
-			<td><%=data.address %></td>
-		</tr>
-		<% }) %>
-		<% } else{ %>
-		<tr>
-			<td colspan="7">No Data Found</td>
-		</tr>
-		<% } %>
-		<%
-			var i=1;
-			var a=new Array();
-			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
-	        if(user2.length!=0){
-	        user1.forEach(function(data){
+				<td><%=data.contact1 %></td>
+				<td><%=data.contact2%></td>
+				<td><%=data.address %></td>
+			</tr>
+			<% }) %>
+			<% }%>
+			<%
+	        if(user20.length!=0){
+	        user20.forEach(function(data){
 	        %>
 			<tr>
 				<td><%=data.name %></td>
@@ -71,22 +65,15 @@
 				<td><%=a[data.day-1]%></td>
 				<td><%=data.start %></td>
 				<td><%=data.end %></td>
-			<td><%=data.contact1 %></td>
-			<td><%=data.contact2%></td>
-			<td><%=data.address %></td>
-		</tr>
-		<% }) %>
-		<% } else{ %>
-		<tr>
-			<td colspan="7">No Data Found</td>
-		</tr>
-		<% } %>
-		<%
-			var i=1;
-			var a=new Array();
-			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
-	        if(user1.length!=0){
-	        user3.forEach(function(data){
+				<td><%=data.contact1 %></td>
+				<td><%=data.contact2%></td>
+				<td><%=data.address %></td>
+			</tr>
+			<% }) %>
+			<% }%>
+			<%
+	        if(user30.length!=0){
+	        user30.forEach(function(data){
 	        %>
 			<tr>
 				<td><%=data.name %></td>
@@ -95,17 +82,14 @@
 				<td><%=a[data.day-1]%></td>
 				<td><%=data.start %></td>
 				<td><%=data.end %></td>
-			<td><%=data.contact1 %></td>
-			<td><%=data.contact2%></td>
-			<td><%=data.address %></td>
-		</tr>
-		<% }) %>
-		<% } else{ %>
-		<tr>
-			<td colspan="7">No Data Found</td>
-		</tr>
-		<% } %>
-	</table>
-</div>
+				<td><%=data.contact1 %></td>
+				<td><%=data.contact2%></td>
+				<td><%=data.address %></td>
+			</tr>
+			<% }) %>
+			<% }%>
+		</table>
+	</div>
 </body>
+
 </html>
