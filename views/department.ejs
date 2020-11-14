@@ -1,136 +1,160 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-
-		body{
+		body {
 			margin: auto;
 			padding: 70px 30px 10px 30px;
 			width: 80%;
 			background-color: black;
 		}
-		#container{
+
+		#container {
 			margin: auto;
 			font-size: 15px;
 			background-color: white;
-			padding :15px 10px 10px 10px;
+			padding: 15px 10px 10px 10px;
 		}
-	
-			#jyomuaah{
-				margin: auto;
-			width: 200px;
-			}
-			#ilovejyo{
-				margin: auto;
-				width: 300px;
-			}
-			table{
-				margin: auto;
-				border: 3px solid darkblue;
-				
-			}
 
-			.spacing{
-				margin: auto;
-				padding: 10px 2px 10px 1px;
-			}
-			#downbar{
-				font-size: 20px;
-				padding-bottom: 10px;
-				padding-top: 15px;
-			}
-			#head{
-				padding: 1px 5px 5px 5px;
-				background-color: #428bca;
-				color: white;
-				font-family: 'Open Sans', sans-serif;
-			}
+		#jm {
+			margin: auto;
+			width: 200px;
+		}
+
+		#ilj {
+			margin: auto;
+			width: 300px;
+		}
+
+		table {
+			margin: auto;
+			border: 3px solid darkblue;
+
+		}
+
+		.spacing {
+			margin: auto;
+			padding: 10px 2px 10px 1px;
+		}
+
+		#downbar {
+			font-size: 20px;
+			padding-bottom: 10px;
+			padding-top: 15px;
+		}
+
+		#head {
+			padding: 1px 5px 5px 5px;
+			background-color: #428bca;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+		}
 	</style>
 </head>
 
-<body>
-	<div id="container">
-	<div id="head"><h2><strong>Your Department....</strong></h2></div>
-	<div>
-		<form method="POST" action="created">
-			<div id="downbar">
-		<p>
-		<strong>Department:</strong>
-		<select name="d">
-			<option name="d1">Department1</option>
-			<option name="d2">Department2</option>
-		</select>
-	</p>
-    </div>
-<div id="Infotdiv">
-	<table id="Infot" border="1">
-		<tr>
-			<td>S.no</td>
-			<td>Doctor name</td>
-			<td>Registraion no</td>
-			<td>Registred_state</td>
-			<td>start_point in24hrs</td>
-			<td>end_point in24hrs</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td><input size=25 type="text" id="latbox" name="docname" required /></td>
-			<td><input size=25 type="text" id="lngbox" name="reg" required /></td>
-			<td><input type="text" name="gstate" size="25" required /></td>
-			<td><input size=20 type="number" name="startp" min="0000" max="2400" minlength="4" maxlength="4" required/></td>
-			<td><input size=20 type="number" name="endp" min="0000" max="2400" minlength="4" maxlength="4" required/></td>
-		</tr>
-	</table>
-		<div class="spacing">
-			<input type="button" class="btn btn-primary" id="jyomuaah" value="Add More " onclick="insRow()" />
-			<div class="spacing">
-	<button type="submit" class="btn btn-success" id="ilovejyo"> Submit </button>
-</div>
-</div>
-</form>
-		<a class="spacing" href="home">Go Back to Home</a>
-</div>
-</div>
-<script type="text/javascript">
-var i=1;
+	<body>
+		<div id="container">
+			<div id="head">
+				<h2><strong>Your Department....</strong></h2>
+			</div>
+			<div>
+				<form method="POST" action="created">
+					<div id="downbar">
+						<p>
+							<strong>Department:</strong>
+							<select name="d">
+								<option name="d1">OPD/Medicine</option>
+								<option name="d2">Gynocology</option>
+							</select>
+						</p>
+					</div>
+					<div id="Infotdiv">
+						<table id="Infot" border="1">
+							<tr>
+								<td>S.no</td>
+								<td>Day</td>>
+								<td>Doctor name</td>
+								<td>Registraion no</td>
+								<td>Registred_state</td>
+								<td>start_point in24hrs</td>
+								<td>end_point in24hrs</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><select name="day">
+									<option value="2">Monday</option>
+									<option value="3">Tuesday</option>
+									<option value="4">Wednesday</option>
+									<option value="5">Thursday</option>
+									<option value="6">Friday</option>
+									<option value="7">Saturday</option>
+									<option value="1">Sunday</option>
+								</select></td>
+								<td><input size=25 type="text" id="latbox" name="docname" required /></td>
+								<td><input size=25 type="text" id="lngbox" name="reg" required /></td>
+								<td><input type="text" name="gstate" size="25" required /></td>
+								<td><input size=20 type="number" name="startp" min="0000" max="2400" minlength="4"
+										maxlength="4" required /></td>
+								<td><input size=20 type="number" name="endp" min="0000" max="2400" minlength="4"
+										maxlength="4" required /></td>
+							</tr>
+						</table>
+					</div>
+						<div class="spacing">
+							<input id="hc" name="cnt" value="1" hidden/>
+							<input type="button" class="btn btn-primary" id="jm" value="Add More " onclick="insRow()" />
+							<div class="spacing">
+								<button type="submit" class="btn btn-success" id="ilj"> Submit </button>
+							</div>
+						</div>
+				</form>
+				<a class="spacing" href="home">Go Back to Home</a>
+			</div>
+		</div>
+	<script type="text/javascript">
 
-	function insRow()
-	{
-    var x=document.getElementById('Infot');
-       // deep clone the targeted row
-    var new_row = x.rows[i].cloneNode(true);
-       // get the total number of rows
-    var len = x.rows.length;
-       // set the innerHTML of the first row
-    new_row.cells[0].innerHTML = len;
+		var i = 1;
+		function insRow() {
+			var x = document.getElementById('Infot');
+			// deep clone the targeted row
+			var new_row = x.rows[i].cloneNode(true);
+			// get the total number of rows
+			var len = x.rows.length;
+			// set the innerHTML of the first row
+			new_row.cells[0].innerHTML = len;
+			// grab the input from the first cell and update its ID and value
+			var inp1 = new_row.cells[1].getElementsByTagName('select')[0];
+			inp1.id += len;
+			// grab the input from the first cell and update its ID and value
+			var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+			inp2.id += len;
+			inp2.value = '';
+			var inp3 = new_row.cells[3].getElementsByTagName('input')[0];
+			inp3.id += len;
+			inp3.value = '';
+			var inp4 = new_row.cells[4].getElementsByTagName('input')[0];
+			inp4.id += len;
+			inp4.value = '';
+			var inp6 = new_row.cells[6].getElementsByTagName('input')[0];
+			inp6.id += len;
+			inp6.value = '';
 
-       // grab the input from the first cell and update its ID and value
-    var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
-    inp1.id += len;
-    inp1.value = '';
-
-       // grab the input from the first cell and update its ID and value
-    var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
-    inp2.id += len;
-    inp2.value = '';
-
-    var inp3 = new_row.cells[3].getElementsByTagName('input')[0];
-    inp3.id += len;
-    inp3.value = '';
-
-    var inp4 = new_row.cells[4].getElementsByTagName('input')[0];
-    inp4.id += len;
-    inp4.value = '';
-
-       // append the new row to the table
-	x.appendChild( new_row );
-	i++;
-	}
-</script>
+			var inp5 = new_row.cells[5].getElementsByTagName('input')[0];
+			inp5.id += len;
+			inp5.value = '';
+			// append the new row to the table
+			x.appendChild(new_row);
+			i++;
+			document.getElementById('hc').value=i;
+		}
+	</script>
 </body>
+
 </html>
                                                         
                             
