@@ -4,25 +4,27 @@
 <head>
 	<title>search result1.0</title>
 </head>
-	<style type="text/css">
-		body {
-			margin: auto;
-			padding: 70px 30px 10px 30px;
-			width: 85%;
-			background-color: black;
-		}
-		div {
-			margin: auto;
-			font-size: 15px;
-			background-color: #5bc0de;
-			padding :15px 10px 10px 10px;
-		}
-		table{
-			width: 80%;
-		}
-	
-	</style>
-	<body>
+<style type="text/css">
+	body {
+		margin: auto;
+		padding: 70px 30px 10px 30px;
+		width: 85%;
+		background-color: black;
+	}
+
+	div {
+		margin: auto;
+		font-size: 15px;
+		background-color: #5bc0de;
+		padding: 15px 10px 10px 10px;
+	}
+
+	table {
+		width: 80%;
+	}
+</style>
+
+<body>
 	<div>
 		<table border="1">
 			<tr>
@@ -39,23 +41,30 @@
 			</tr>
 
 			<%
-	        if(user10.length!=0){
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+			var d=new Date(); var curd=d.getDay()+1;%>
+	        <%if(user10.length!=0){
 	        user10.forEach(function(data){
 	        %>
 			<tr>
 				<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
+						<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
+				</form>
 			</tr>
 			<% }) %>
 			<% }%>
@@ -64,19 +73,23 @@
 	        user20.forEach(function(data){
 	        %>
 			<tr>
-			<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
+				<form method="POST" action="">
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
+					<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
+				</form>
 			</tr>
 			<% }) %>
 			<% }%>
@@ -86,18 +99,22 @@
 	        %>
 			<tr>
 				<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
+					<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
+				</form>
 			</tr>
 			<% }) %>
 			<% }%>
