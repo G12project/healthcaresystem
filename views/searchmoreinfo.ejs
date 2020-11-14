@@ -12,19 +12,14 @@
 		height: 100vh;
 		width: 100%;
 	}
-
 	.jyoissmart1 {
 		background-color: black;
 		color: white;
-
 	}
-
 	.jyoissmart2 {
 		background-color: #5bc0de;
 		color: black;
-
 	}
-
 	.t1 {
 		margin: auto;
 		width: 90%;
@@ -35,11 +30,9 @@
 		width:60%;
 		color:beige;
 	}
-
 	.jyoisbomb {
 		padding: 30px 30px 20px 20px;
 	}
-
 	.iwannafuckher {
 		padding: 50px 5px 20px 20px;
 	}
@@ -47,7 +40,6 @@
 		padding-left: 180px;
 		margin: auto;
 	}
-
 </style>
 
 <body>
@@ -68,26 +60,35 @@
 						</tr>
 
 						<%
+						var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+			var d=new Date(); var curd=d.getDay()+1;%>
 	        if(user3.length!=0){
 	        user3.forEach(function(data){
 	        %>
+	        		<form>
 						<tr>
 							<td><%=data.dname %></td>
 							<td><%=data.docname %></td>
-							<td><%=data.day %></td>
+							<td><%=a[data.day-1]%></td>
 							<td><%=data.start %></td>
 							<td><%=data.end %></td>
+							<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+							<%if(data.day==curd || data.capcnt==0){ %>
+						<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
 						</tr>
 						<% }) %>
 						<% } else{ %>
-						<tr>
-							<td colspan="7">No Data Found</td>
-						</tr>
 						<% } %>
+					</form>
 					</table>
 				</div>
 			</div>
 		</div>
+	</div>
 		<div class="col-md-4 jyoissmart1 no gutters">
 			<div class="rightside">
 
@@ -126,3 +127,4 @@
 			</div>
 		</div>
 </body>
+</html>
