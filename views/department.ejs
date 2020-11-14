@@ -9,8 +9,8 @@
 	<style>
 		body {
 			margin: auto;
-			padding: 70px 30px 10px 30px;
-			width: 80%;
+			padding: 70px 30px 10px 20px;
+			width: 100%;
 			background-color: black;
 		}
 		#container {
@@ -67,16 +67,16 @@
 					</div>
 					<div id="Infotdiv">
 						<table id="Infot" border="1">
-							<th>
+							<tr>
 								<td>S.no</td>
-								<td>Day</td>>
+								<td>Day</td>
 								<td>Doctor name</td>
 								<td>Registraion no</td>
 								<td>Registred_state</td>
 								<td>start_point in24hrs</td>
 								<td>end_point in24hrs</td>
 								<td>Maximum appointment</td>
-							</th>
+							</tr>
 							<tr>
 								<td>1</td>
 								<td><select name="day">
@@ -95,7 +95,7 @@
 										maxlength="4" required /></td>
 								<td><input size=20 type="number" name="endp" min="0000" max="2400" minlength="4"
 										maxlength="4" required /></td>
-								<td><input type="number" name="cap"/></td>
+								<td ><input size="20" type="number" maxlength="4" name="cap"/></td>
 							</tr>
 						</table>
 					</div>
@@ -136,7 +136,7 @@
 			var inp6 = new_row.cells[6].getElementsByTagName('input')[0];
 			inp6.id += len;
 			inp6.value = '';
-			var inp7 = new_row.cells[6].getElementsByTagName('input')[0];
+			var inp7 = new_row.cells[7].getElementsByTagName('input')[0];
 			inp7.id += len;
 			inp7.value = '';
 			var inp5 = new_row.cells[5].getElementsByTagName('input')[0];
@@ -150,5 +150,4 @@
 	</script>
 </body>
 
-</html>                                                 
-                            
+</html>          
