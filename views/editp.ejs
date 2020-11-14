@@ -2,107 +2,105 @@
 <html>
 
 <head>
-	<title>search result1.0</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>searchresult2</title>
 </head>
-	<style type="text/css">
-		body {
-			margin: auto;
-			padding: 70px 30px 10px 30px;
-			width: 85%;
-			background-color: black;
-		}
-		div {
-			margin: auto;
-			font-size: 15px;
-			background-color: #5bc0de;
-			padding :15px 10px 10px 10px;
-		}
-		table{
-			width: 80%;
-		}
-	
-	</style>
-	<body>
+<style type="text/css">
+	body {
+		width: 90%;
+		margin: auto;
+		background-color: black;
+		color: white;
+		padding: 50px 20px 20px 50px;
+	}
+
+	div {
+		background-color: #5bc0de;
+		padding: 50px 10px 20px 60px;
+	}
+
+	table {
+		width: 95%;
+		color: black;
+		border-color: black;
+	}
+
+	input {
+		color: black;
+		background-color: #5bc0de;
+		border: solid #5bc0de;
+		width: 100%;
+	}
+
+	button {
+		background-color: #0d67c8;
+		color: white;
+	}
+</style>
+
+<body>
 	<div>
 		<table border="1">
 			<tr>
-				<th>Hospital</th>
-				<th>Speciality</th>
-				<th>Doctor</th>
-				<th>Day</th>
-				<th>Start session</th>
-				<th>End session</th>
-				<th>Contact1</th>
-				<th>Call Ambulance</th>
-				<th>Address</th>
-				<th>Appointment</th>
+				<th>S.no</th>
+				<th>day</th>
+				<th>doctor name</th>
+				<th>registration name</th>
+				<th>session start</th>
+				<th>session end</th>
+				<th>save option</th>
+				<th>delete option</th>
 			</tr>
 
 			<%
-	        if(user10.length!=0){
-	        user10.forEach(function(data){
-	        %>
-			<tr>
-				<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
-			</tr>
-			<% }) %>
-			<% }%>
-			<%
+			var i=1;
+			var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
 	        if(user20.length!=0){
 	        user20.forEach(function(data){
 	        %>
 			<tr>
-			<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
+				<form method="POST" action="editit">
+					<td><input value="<%=i%>" name="sno" readonly /></td>
+					<td><select name="tday">
+							<option value="0"><%=a[data.day-1]%></option>
+							<option value="2">Monday</option>
+							<option value="3">tuesday</option>
+							<option value="4">wednesday</option>
+							<option value="5">thursday</option>
+							<option value="6">friday</option>
+							<option value="7">saturday</option>
+							<option value="1">sunday</option>
+						</select></td>
+					<td><input name="docname" value="<%=data.docname%>" /></td>
+					<td><input name="regno" value="<%=data.reg%>" /></td>
+					<td><input name="ss" value="<%=data.start%>" /></td>
+					<td><input name="se" value="<%=data.end%>" /></td>
+					<td hidden><input id="hc" name="cnt" value="" hidden /></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
+					<td><button type="submit" onclick="v()" class="btn btn-primary"/>save changes</button></td>
+					<td><button type="submit" onclick="u()" class="btn btn-danger" />delete row</button></td>
+				</form>
 			</tr>
-			<% }) %>
-			<% }%>
-			<%
-	        if(user30.length!=0){
-	        user30.forEach(function(data){
-	        %>
-			<tr>
-				<form method="POST" action="">
-				<td><%=data.name %></td>
-				<td><%=data.dname %></td>
-				<td><%=data.docname %></td>
-				<td><%=a[data.day-1]%></td>
-				<td><%=data.start %></td>
-				<td><%=data.end %></td>
-				<td><%=data.contact1 %></td>
-				<td><%=data.contact2%></td>
-				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
-				<td><%=data.address %></td>
-				<td><button type="submit">Book an appointment</button></td>
-			</form>
-			</tr>
-			<% }) %>
-			<% }%>
+			<% i++; }) %>
+			<% } else{ %>
+
+			<% } %>
 		</table>
+		<p><a href="home">Go back to home</a></p>
 	</div>
+	<script>
+		function v(){
+			var x=document.getElementById("hc");
+			x.value="0";
+		}
+		function u(){
+			var w=document.getElementById("hc");
+			w.value="1";
+		}
+	</script>
 </body>
 
 </html>
