@@ -4,25 +4,25 @@
 <head>
 	<title>search result1.0</title>
 </head>
-
-<body>
 	<style type="text/css">
 		body {
-			width: 80%;
 			margin: auto;
+			padding: 70px 30px 10px 30px;
+			width: 85%;
 			background-color: black;
-			color: white;
 		}
-
 		div {
-			background-color: blue;
-			padding: 50px 10px 20px 10px;
+			margin: auto;
+			font-size: 15px;
+			background-color: #5bc0de;
+			padding :15px 10px 10px 10px;
 		}
-
-		table {
-			width: 95%;
+		table{
+			width: 80%;
 		}
+	
 	</style>
+	<body>
 	<div>
 		<table border="1">
 			<tr>
@@ -33,7 +33,7 @@
 				<th>Start session</th>
 				<th>End session</th>
 				<th>Contact1</th>
-				<th>Contact2</th>
+				<th>Call Ambulance</th>
 				<th>Address</th>
 				<th>Appointment</th>
 			</tr>
@@ -43,6 +43,7 @@
 	        user10.forEach(function(data){
 	        %>
 			<tr>
+				<form method="POST" action="">
 				<td><%=data.name %></td>
 				<td><%=data.dname %></td>
 				<td><%=data.docname %></td>
@@ -51,8 +52,10 @@
 				<td><%=data.end %></td>
 				<td><%=data.contact1 %></td>
 				<td><%=data.contact2%></td>
+				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
 				<td><%=data.address %></td>
-				<td><%=data.app %></td>
+				<td><button type="submit">Book an appointment</button></td>
+			</form>
 			</tr>
 			<% }) %>
 			<% }%>
@@ -61,6 +64,7 @@
 	        user20.forEach(function(data){
 	        %>
 			<tr>
+			<form method="POST" action="">
 				<td><%=data.name %></td>
 				<td><%=data.dname %></td>
 				<td><%=data.docname %></td>
@@ -69,8 +73,10 @@
 				<td><%=data.end %></td>
 				<td><%=data.contact1 %></td>
 				<td><%=data.contact2%></td>
+				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
 				<td><%=data.address %></td>
-				<td><%=data.app %></td>
+				<td><button type="submit">Book an appointment</button></td>
+			</form>
 			</tr>
 			<% }) %>
 			<% }%>
@@ -79,6 +85,7 @@
 	        user30.forEach(function(data){
 	        %>
 			<tr>
+				<form method="POST" action="">
 				<td><%=data.name %></td>
 				<td><%=data.dname %></td>
 				<td><%=data.docname %></td>
@@ -87,8 +94,10 @@
 				<td><%=data.end %></td>
 				<td><%=data.contact1 %></td>
 				<td><%=data.contact2%></td>
+				<td hidden><input name="si" value="<%=data.sid%>" hidden readonly/></td>
 				<td><%=data.address %></td>
-				<td><%=data.app %></td>
+				<td><button type="submit">Book an appointment</button></td>
+			</form>
 			</tr>
 			<% }) %>
 			<% }%>
