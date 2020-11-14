@@ -1,130 +1,124 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<title>search result1.0</title>
 </head>
 <style type="text/css">
-	.leftside,
-	.rightside {
-		height: 100vh;
-		width: 100%;
-	}
-	.jyoissmart1 {
+	body {
+		margin: auto;
+		padding: 70px 30px 10px 30px;
+		width: 85%;
 		background-color: black;
-		color: white;
 	}
-	.jyoissmart2 {
+	div {
+		margin: auto;
+		font-size: 15px;
 		background-color: #5bc0de;
-		color: black;
+		padding: 15px 10px 10px 10px;
 	}
-	.t1 {
-		margin: auto;
-		width: 90%;
-		border: 3px solid darkblue;
-	}
-	.t2{
-		margin:auto;
-		width:60%;
-		color:beige;
-	}
-	.jyoisbomb {
-		padding: 30px 30px 20px 20px;
-	}
-	.iwannafuckher {
-		padding: 50px 5px 20px 20px;
-	}
-	.fine{
-		padding-left: 180px;
-		margin: auto;
+	table {
+		width: 80%;
 	}
 </style>
 
 <body>
-	<div class="fine">
-		<h1><%=user4[0].name %></h1>
-	</div>
-	<div class="row no gutters">
-		<div class="col-md-8 jyoissmart2 no gutters">
-			<div class="leftside">
-				<div class="jyoisbomb">
-					<table class="t1" border="2">
-						<tr>
-							<th>Speciality</th>
-							<th>Doctor</th>
-							<th>Day</th>
-							<th>Start session</th>
-							<th>End session</th>
-						</tr>
+	<div>
+		<table border="1">
+			<tr>
+				<th>Hospital</th>
+				<th>Speciality</th>
+				<th>Doctor</th>
+				<th>Day</th>
+				<th>Start session</th>
+				<th>End session</th>
+				<th>Contact1</th>
+				<th>Call Ambulance</th>
+				<th>Address</th>
+				<th>Appointment</th>
+			</tr>
 
-						<%
-						var a=new Array();
+			<%
+			var a=new Array();
 			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
 			var d=new Date(); var curd=d.getDay()+1;%>
-	        if(user3.length!=0){
-	        user3.forEach(function(data){
+	        <%if(user10.length!=0){
+	        user10.forEach(function(data){
 	        %>
-	        		<form>
-						<tr>
-							<td><%=data.dname %></td>
-							<td><%=data.docname %></td>
-							<td><%=a[data.day-1]%></td>
-							<td><%=data.start %></td>
-							<td><%=data.end %></td>
-							<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
-							<%if(data.day==curd || data.capcnt==0){ %>
+			<tr>
+				<form method="POST" action="">
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
 						<td>Appointment Unavailable</td>
 					<%} else{ %>
 					<td><button type="submit">Book an appointment</button></td>
 					<%}%>
-						</tr>
-						<% }) %>
-						<% } else{ %>
-						<% } %>
-					</form>
-					</table>
-				</div>
-			</div>
-		</div>
+				</form>
+			</tr>
+			<% }) %>
+			<% }%>
+			<%
+	        if(user20.length!=0){
+	        user20.forEach(function(data){
+	        %>
+			<tr>
+				<form method="POST" action="">
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
+					<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
+				</form>
+			</tr>
+			<% }) %>
+			<% }%>
+			<%
+	        if(user30.length!=0){
+	        user30.forEach(function(data){
+	        %>
+			<tr>
+				<form method="POST" action="">
+					<td><%=data.name %></td>
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end %></td>
+					<td><%=data.contact1 %></td>
+					<td><%=data.contact2%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<td><%=data.address %></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
+					<td>Appointment Unavailable</td>
+					<%} else{ %>
+					<td><button type="submit">Book an appointment</button></td>
+					<%}%>
+				</form>
+			</tr>
+			<% }) %>
+			<% }%>
+		</table>
 	</div>
-		<div class="col-md-4 jyoissmart1 no gutters">
-			<div class="rightside">
-
-				<div class="row iwannafuckher">
-					<p>
-						<h1>About</h1>
-					</p>
-					<p><%=user4[0].descp%></p>
-					<table class="t2">
-						<tr>
-						<td>Location</td>
-						<td><%=user4[0].address %></td>
-						</tr>
-						<tr>
-						<td>Contact</td>
-						<td><%=user4[0].contact1 %></td>
-						</tr>
-						<tr>
-						<td></td>
-						<td><%=user4[0].contact2 %></td>
-						</tr>
-						<tr>
-						<td>Email</td>
-						<td><%=user4[0].email %></td>
-						</tr>
-						<tr>
-						<td>Beds</td>
-						<td><%=user4[0].Beds %></td>
-						</tr>
-						<tr>
-						<td>Ambulances</td>
-						<td><%=user4[0].Amb %></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
 </body>
+
 </html>
