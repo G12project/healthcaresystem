@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>app info</title>
 </head>
+
 <body>
-<div>
-	<table>
-		<th>S no</th>
-		<th>First name</th>
-		<th>Last name</th>
-		<th>Phone number</th>
-		<th>Problem</th>
-			<%
-	        if(user2.length!=0){
-	        user2.forEach(function(data){
+	<div>
+		<table>
+			<th>S no</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Health Issue</th>
+			<th>Phone number</th>
+			<th>Email</th>
+			<% var i=1;
+	        if(user25.length!=0){
+	        user25.forEach(function(data){
 	        %>
-	        <tr>
-	        	<td>1</td>
-	        	<td><%=data.fname%></td>
-	        	<td><%=data.lname%></td>
-	        	<td><%=data.pno%></td>
-	        	<td><%=data.pr%></td>
-	        </tr>
-	</table>
-</div>
+			<tr>
+				<td><%=i%></td>
+				<td><%=data.fn%></td>
+				<td><%=data.ln%></td>
+				<td><%=data.prob%></td>
+				<td><%=data.pno%></td>
+				<td><%=data.email%></td>
+			</tr>
+			<% i++; });}%>
+		</table>
+	</div>
 </body>
+
 </html>
