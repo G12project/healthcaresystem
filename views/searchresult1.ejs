@@ -12,12 +12,14 @@
 		width: 85%;
 		background-color: black;
 	}
+
 	div {
 		margin: auto;
 		font-size: 15px;
 		background-color: #5bc0de;
 		padding: 15px 10px 10px 10px;
 	}
+
 	table {
 		width: 80%;
 	}
@@ -47,7 +49,7 @@
 	        user10.forEach(function(data){
 	        %>
 			<tr>
-				<form method="POST" action="">
+				<form method="POST" action="appointment">
 					<td><%=data.name %></td>
 					<td><%=data.dname %></td>
 					<td><%=data.docname %></td>
@@ -72,7 +74,7 @@
 	        user20.forEach(function(data){
 	        %>
 			<tr>
-				<form method="POST" action="">
+				<form method="POST" action="appointment">
 					<td><%=data.name %></td>
 					<td><%=data.dname %></td>
 					<td><%=data.docname %></td>
@@ -83,7 +85,7 @@
 					<td><%=data.contact2%></td>
 					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
 					<td><%=data.address %></td>
-					<%if(data.day==curd || data.capcnt==0){ %>
+					<%if(data.day==curd || data.capcnt<=0){ %>
 					<td>Appointment Unavailable</td>
 					<%} else{ %>
 					<td><button type="submit">Book an appointment</button></td>
@@ -97,7 +99,7 @@
 	        user30.forEach(function(data){
 	        %>
 			<tr>
-				<form method="POST" action="">
+				<form method="POST" action="appointment">
 					<td><%=data.name %></td>
 					<td><%=data.dname %></td>
 					<td><%=data.docname %></td>
