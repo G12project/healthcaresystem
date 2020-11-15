@@ -44,6 +44,9 @@
 				</tr>
 
 				<%
+				var a=new Array();
+			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
+			var d=new Date(); var curd=d.getDay()+1;%>
 	        if(user2.length!=0){
 	        user2.forEach(function(data){
 	        %>
@@ -51,6 +54,7 @@
 					<form method="POST" action="details">
 					<td><input name="dname" value="<%=data.dname%>" readonly/></td>
 					<td><input name="docname" value="<%=data.docname%>" readonly /></td>
+					<td><input name="day" value="<%=data.a[day-1]%>" readonly /></td>
 					<td><input name="start" value="<%=data.start%>"readonly/></td>
 					<td><input name="end" value="<%=data.end%>"readonly/></td>
 					<td><button type="submit" class="btn btn-primary">Click to view details</button></td>
