@@ -11,39 +11,48 @@
 <style type="text/css">
 	body {
 		margin: auto;
-		padding: 70px 30px 10px 30px;
+		padding: 10px 30px 10px 30px;
 		width: 70%;
 		background-color: black;
 	}
-
 	#container {
 		margin: auto;
 		font-size: 15px;
 		background-color: white;
-		padding: 15px 10px 10px 10px;
+		padding: 10px 10px 10px 10px;
 	}
-
 	#head {
-		padding: 1px 5px 5px 5px;
+		padding: 0.8px 1px 1px 1px;
 		background-color: #428bca;
 		color: white;
 		font-family: 'Open Sans', sans-serif;
+		height: 75px;
 	}
-
 	#about {
 		padding: 5px 5px 5px 5px;
 		font-size: 20px;
 		font-family: 'Open Sans', sans-serif;
 	}
-
 	#href {
 		padding: 5px 5px 5px 5px;
 		font-size: 20px;
 	}
+	#image{
+		height: 40px;
+	}
+	.buttons{
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+		background-color: white;
+	}
 </style>
 
 <body>
+	<div id="im">
+			<img id="image" src=https://static1.squarespace.com/static/58c6fc4a37c581154f75cdd2/t/58e662456a496356f0430f90/1604006272177/>
+		</div>
 	<div id="container">
+		
 		<div id="head">
 			<h1>Welcome Back <%=user.name%> </h1>
 		</div>
@@ -57,17 +66,23 @@
 			<p> Email: <%=user.email%></p>
 		</div>
 		<div id="href">
-			<a href="department">Create Departments</a>
+			<a class="btn btn-primary" role="button" href="department" >Create Departments</a>
 		</div>
 		<div id="form">
 			<form method="POST" action="editselect">
-				<button type="submit">Edit Departments</button>
+				<div class="buttons">
+				<button type="submit" class="btn btn-primary">Edit Departments</button>
+			</div>
 			</form>
 			<form method="POST" action="appdeptsel">
-				<button type="submit">View Appointments</button>
+				<div class="buttons">
+				<button type="submit" class="btn btn-primary">View Appointments</button>
+			</div>
 			</form>
 			<form method="POST" action="logout">
-				<button type="submit" class="btn btn-success">Logout</button>
+				<div class="buttons">
+				<button  type="submit" class="btn btn-success">Logout</button>
+			</div>
 			</form>
 		</div>
 	</div>
