@@ -12,14 +12,19 @@
 		height: 100vh;
 		width: 100%;
 	}
-	.jyoissmart1 {
+
+	.issmart1 {
 		background-color: black;
 		color: white;
+
 	}
-	.jyoissmart2 {
+
+	.issmart2 {
 		background-color: #5bc0de;
 		color: black;
+
 	}
+
 	.t1 {
 		margin: auto;
 		width: 90%;
@@ -30,16 +35,19 @@
 		width:60%;
 		color:beige;
 	}
-	.jyoisbomb {
+
+	.isbomb {
 		padding: 30px 30px 20px 20px;
 	}
-	.iwannafuckher {
+
+	.iwfr {
 		padding: 50px 5px 20px 20px;
 	}
 	.fine{
 		padding-left: 180px;
 		margin: auto;
 	}
+
 </style>
 
 <body>
@@ -47,9 +55,9 @@
 		<h1><%=user4[0].name %></h1>
 	</div>
 	<div class="row no gutters">
-		<div class="col-md-8 jyoissmart2 no gutters">
+		<div class="col-md-8 issmart2 no gutters">
 			<div class="leftside">
-				<div class="jyoisbomb">
+				<div class="isbomb">
 					<table class="t1" border="2">
 						<tr>
 							<th>Speciality</th>
@@ -57,42 +65,41 @@
 							<th>Day</th>
 							<th>Start session</th>
 							<th>End session</th>
+							<th>Appointment</th>
 						</tr>
-
-						<%
-						var a=new Array();
+			<%
+			var a=new Array();
 			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
-			var d=new Date(); var curd=d.getDay()+1;%>
+			var d=new Date(); var curd=d.getDay()+1; %>
+			<%
 	        if(user3.length!=0){
 	        user3.forEach(function(data){
 	        %>
-	        		<form>
-						<tr>
-							<td><%=data.dname %></td>
-							<td><%=data.docname %></td>
-							<td><%=a[data.day-1]%></td>
-							<td><%=data.start %></td>
-							<td><%=data.end %></td>
-							<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
-							<%if(data.day==curd || data.capcnt==0){ %>
+				<tr>
+				<form method="POST" action="appointment">
+					<td><%=data.dname %></td>
+					<td><%=data.docname %></td>
+					<td><%=a[data.day-1]%></td>
+					<td><%=data.start %></td>
+					<td><%=data.end%></td>
+					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
+					<%if(data.day==curd || data.capcnt==0){ %>
 						<td>Appointment Unavailable</td>
 					<%} else{ %>
 					<td><button type="submit">Book an appointment</button></td>
 					<%}%>
-						</tr>
-						<% }) %>
-						<% } else{ %>
-						<% } %>
-					</form>
+				</form>
+			</tr>
+			<% }) %>
+			<% }%>
 					</table>
 				</div>
 			</div>
 		</div>
-	</div>
-		<div class="col-md-4 jyoissmart1 no gutters">
+		<div class="col-md-4 issmart1 no gutters">
 			<div class="rightside">
 
-				<div class="row iwannafuckher">
+				<div class="row iwfr">
 					<p>
 						<h1>About</h1>
 					</p>
@@ -127,4 +134,3 @@
 			</div>
 		</div>
 </body>
-</html>
