@@ -1,61 +1,76 @@
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-	body {
-			margin: auto;
-			padding: 70px 30px 10px 30px;
-			width: 80%;
-			background-color: black;
-		}
-	#container {
-			margin: auto;
-			font-size: 15px;
-			background-color: white;
-			padding: 15px 10px 10px 10px;
-		}
-	#ilj {
-			margin: auto;
-			width: 300px;
-			font-size: 18px;
-		}
-	#head {
-			padding: 1px 5px 5px 5px;
-			background-color: #428bca;
-			color: white;
-			font-family: 'Open Sans', sans-serif;
-		}
-	#downbar {
-			font-size: 15px;
-			padding-bottom: 10px;
-			padding-top: 15px;
-		}
-	#yash{
-		font-size:15px;
-	}
-	</style>
+
+	<title>welcome</title>
 </head>
+<style type="text/css">
+	body {
+		margin: auto;
+		padding: 70px 30px 10px 30px;
+		width: 70%;
+		background-color: black;
+	}
+
+	#container {
+		margin: auto;
+		font-size: 15px;
+		background-color: white;
+		padding: 15px 10px 10px 10px;
+	}
+
+	#head {
+		padding: 1px 5px 5px 5px;
+		background-color: #428bca;
+		color: white;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	#about {
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	#href {
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+	}
+</style>
+
 <body>
 	<div id="container">
 		<div id="head">
-			<h2><strong>Login</strong></h2>
+			<h1>Welcome Back <%=user.name%> </h1>
 		</div>
-		<div id="downbar">
-		<form action="auth" method="POST">
-			<p><input type="text" placeholder="Username" name="un" required></p>
-			<p><input type="password" placeholder="Password" name="pass" required></p>
-			<button type="submit" class="btn btn-success" id="ilj"> Login </button>
-			<div id="yash">
-				<p> Don't Have An Account?
-				<a href='register'> Register </a></p>
-			</div>
-		</form>
+		<div id="about">
+			<p>About <%=user.name%></p>
+			<p><%=user.descp%></p>
+			<p> Equiped with <%=user.Beds%> beds and <%=user.Amb%> ambulances.</p>
+			<p> Address: <%=user.address%></p>
+			<p> Contact1: <%=user.contact1%></p>
+			<p> Contact2: <%=user.contact2%></p>
+			<p> Email: <%=user.email%></p>
+		</div>
+		<div id="href">
+			<a href="department">Create Departments</a>
+		</div>
+		<div id="form">
+			<form method="POST" action="editselect">
+				<button type="submit">Edit Departments</button>
+			</form>
+			<form method="POST" action="appdeptsel">
+				<button type="submit">View Appointments</button>
+			</form>
+			<form method="POST" action="logout">
+				<button type="submit" class="btn btn-success">Logout</button>
+			</form>
 		</div>
 	</div>
-</div>
 </body>
 
 </html>
