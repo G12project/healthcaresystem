@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>select</title>
+</head>
+
+<body>
+	<div>
+		Select Department to view Appointments.
+	</div>
+	<div>
+		<table border="1">
+			<tr>
+				<th>Department Name</th>
+				<th>Sessions</th>
+			</tr>
+
+			<%
+	        if(dept.length!=0){
+	        dept.forEach(function(data){
+	        %>
+			<tr>
+				<form method="POST" action="apdeptview">
+					<td><input name="deptn" value="<%=data.dname%>" readonly /></td>
+					<td><button type="submit" class="btn btn-primary">View</button></td>
+				</form>
+			</tr>
+			<% }) %>
+			<% } else{ %>
+			<tr>
+				<td colspan="7">No Data Found</td>
+			</tr>
+			<% } %>
+		</table>
+	</div>
+</body>
+
+</html>
