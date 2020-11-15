@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>app info</title>
+</head>
+<body>
+<div>
+	<table>
+		<th>S no</th>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Phone number</th>
+		<th>Problem</th>
+			<%
+	        if(user2.length!=0){
+	        user2.forEach(function(data){
+	        %>
+	        <tr>
+	        	<td>1</td>
+	        	<td><%=data.fname%></td>
+	        	<td><%=data.lname%></td>
+	        	<td><%=data.pno%></td>
+	        	<td><%=data.pr%></td>
+	        </tr>
+	</table>
+</div>
+</body>
+</html>
