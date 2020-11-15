@@ -15,44 +15,48 @@
 		color: white;
 		padding: 50px 20px 20px 50px;
 	}
-
-	div {
-		background-color: #5bc0de;
-		padding: 50px 10px 20px 60px;
+	#container {
+		background-color: white;
+		padding: 10px 10px 5px 20px;
 	}
-
 	table {
-		width: 95%;
+		width: 100%;
 		color: black;
-		border-color: black;
+		border: solid black 1px;
 	}
-
 	input {
 		color: black;
-		background-color: #5bc0de;
-		border: solid #5bc0de;
+		border: solid  white 1px;
+
 		width: 100%;
 	}
-
-	button {
-		background-color: #0d67c8;
-		color: white;
+	#info{
+		color: #a6a6a6;
 	}
+	#hos{
+			padding-top: 1px;
+			padding-left: 90%;
+			color: black;
+		}
+		#home{
+			padding-top: 2px;
+		}
+	
 </style>
 
 <body>
-	<div>
+	<div id="container">
 		<table border="1">
-			<tr>
+	
 				<th>S.no</th>
 				<th>day</th>
 				<th>doctor name</th>
-				<th>registration name</th>
+				<th>registration id+state</th>
 				<th>session start</th>
 				<th>session end</th>
 				<th>save option</th>
 				<th>delete option</th>
-			</tr>
+			
 
 			<%
 			var i=1;
@@ -86,11 +90,19 @@
 			</tr>
 			<% i++; }) %>
 			<% } else{ %>
-
 			<% } %>
 		</table>
-		<p><a href="home">Go back to home</a></p>
+		<div id="home">
+		<a href="home">Go back to home</a>
 	</div>
+		<div id="info">
+* Registration id+state should be filled like if registration id=10041 and register state=WB it should be filled as 10041WB
+	</div>
+	<div id="hos">
+		<strong><%=hos%></strong>
+	</div>
+	</div>
+	
 	<script>
 		function v(){
 			var x=document.getElementById("hc");
