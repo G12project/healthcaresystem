@@ -2,147 +2,123 @@
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <head>
-	<title>search result1.0</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>searchresult2</title>
 </head>
 <style type="text/css">
-	body{
-			margin: auto;
-			width: 100%;
-			padding: 50px 10px 10px 10px;
-			background-color: black;
-		}
-		table{
-			width: 100%;
-		}
-		#container{
-			margin: auto;
-			padding: 20px 20px 10px 20px;
-			background-color: white;
-		}
-		#head{
-			background-color: #5bc0de;
+	body {
+		width: 90%;
+		margin: auto;
+		background-color: black;
+		color: white;
+		padding: 50px 20px 20px 50px;
+	}
+
+	#container {
+		background-color: white;
+		padding: 10px 10px 5px 20px;
+	}
+
+	table {
+		width: 100%;
+		color: black;
+		border: solid black 1px;
+	}
+
+	input {
+		color: black;
+		border: solid white 1px;
+		width: 100%;
+	}
+
+	#info {
+		color: #a6a6a6;
+	}
+
+	#hos {
+		padding-top: 1px;
+		padding-left: 90%;
+		color: black;
+	}
+
+	#home {
+		padding-top: 2px;
+	}
+
+	img {
+		height: 50px;
+	}
+	#head {
+			background-color: #428bca;
 			padding: 1px 2px 1px 2px;
 			color: white;
 		}
-		img{
-			height: 60px;
-		}
-		#hos{
-			padding-top: 5px;
-			padding-left: 90%;
-		}
-		#info{
-		color: #a6a6a6;
-	}
 </style>
 
 <body>
-	<img src="https://static1.squarespace.com/static/58c6fc4a37c581154f75cdd2/t/58e662456a496356f0430f90/1604006272177/">
+	<img
+		src="https://static1.squarespace.com/static/58c6fc4a37c581154f75cdd2/t/58e662456a496356f0430f90/1604006272177/">
 	<div id="container">
 		<div id="head">
-			<h3><%=keyword%></h3>
+			<h3>EDIT</h3>
 		</div>
 		<table border="1">
-			<tr>
-				<th>Hospital</th>
-				<th>Speciality</th>
-				<th>Doctor</th>
-				<th>Day</th>
-				<th>Start session</th>
-				<th>End session</th>
-				<th>Help-desk</th>
-				<th>Call Ambulance</th>
-				<th>Address</th>
-				<th>Appointment</th>
-			</tr>
+				<th>S.no</th>
+				<th>day</th>
+				<th>doctor name</th>
+				<th>registration name</th>
+				<th>session start</th>
+				<th>session end</th>
+				<th>save option</th>
+				<th>delete option</th>
 
 			<%
+			var i=1;
 			var a=new Array();
 			a[0]="Sunday"; a[1]="Monday"; a[2]="Tuesday"; a[3]="Wednesday"; a[4]="Thursday"; a[5]="Friday"; a[6]="Saturday";
-			var d=new Date(); var curd=d.getDay()+1;%>
-	        <%if(user10.length!=0){
-	        user10.forEach(function(data){
-	        %>
-			<tr>
-				<form method="POST" action="appointment">
-					<td><%=data.name %></td>
-					<td><%=data.dname %></td>
-					<td><%=data.docname %></td>
-					<td><%=a[data.day-1]%></td>
-					<td><%=data.start %></td>
-					<td><%=data.end %></td>
-					<td><%=data.contact1 %></td>
-					<td><%=data.contact2%></td>
-					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
-					<td><%=data.address %></td>
-					<%if(data.day==curd || data.capcnt==0){ %>
-						<td>Appointment Unavailable</td>
-					<%} else{ %>
-					<td><button type="submit" class="btn btn-success">Book an appointment</button></td>
-					<%}%>
-				</form>
-			</tr>
-			<% }) %>
-			<% }%>
-			<%
 	        if(user20.length!=0){
 	        user20.forEach(function(data){
 	        %>
 			<tr>
-				<form method="POST" action="appointment">
-					<td><%=data.name %></td>
-					<td><%=data.dname %></td>
-					<td><%=data.docname %></td>
-					<td><%=a[data.day-1]%></td>
-					<td><%=data.start %></td>
-					<td><%=data.end %></td>
-					<td><%=data.contact1 %></td>
-					<td><%=data.contact2%></td>
+				<form method="POST" action="editit">
+					<td><input value="<%=i%>" name="sno" readonly /></td>
+					<td><select name="tday">
+							<option value="0"><%=a[data.day-1]%></option>
+							<option value="2">Monday</option>
+							<option value="3">tuesday</option>
+							<option value="4">wednesday</option>
+							<option value="5">thursday</option>
+							<option value="6">friday</option>
+							<option value="7">saturday</option>
+							<option value="1">sunday</option>
+						</select></td>
+					<td><input name="docname" value="<%=data.docname%>" /></td>
+					<td><input name="regno" value="<%=data.reg%>" /></td>
+					<td><input name="ss" value="<%=data.start%>" /></td>
+					<td><input name="se" value="<%=data.end%>" /></td>
 					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
-					<td><%=data.address %></td>
-					<%if(data.day==curd || data.capcnt<=0){ %>
-					<td>Appointment Unavailable</td>
-					<%} else{ %>
-					<td><button type="submit" class="btn btn-success">Book an appointment</button></td>
-					<%}%>
+					<td><button type="submit" name="but" value="0" class="btn btn-primary"/>save changes</button></td>
+					<td><button type="submit" name="but" value="1" class="btn btn-danger" />delete row</button></td>
 				</form>
 			</tr>
-			<% }) %>
-			<% }%>
-			<%
-	        if(user30.length!=0){
-	        user30.forEach(function(data){
-	        %>
-			<tr>
-				<form method="POST" action="appointment">
-					<td><%=data.name %></td>
-					<td><%=data.dname %></td>
-					<td><%=data.docname %></td>
-					<td><%=a[data.day-1]%></td>
-					<td><%=data.start %></td>
-					<td><%=data.end %></td>
-					<td><%=data.contact1 %></td>
-					<td><%=data.contact2%></td>
-					<td hidden><input name="si" value="<%=data.sid%>" hidden readonly /></td>
-					<td><%=data.address %></td>
-					<%if(data.day==curd || data.capcnt==0){ %>
-					<td>Appointment Unavailable</td>
-					<%} else{ %>
-					<td><button type="submit" class="btn btn-success">Book an appointment</button></td>
-					<%}%>
-				</form>
-			</tr>
-			<% }) %>
-			<% }%>
+			<% i++; }) %>
+			<% } %>
 		</table>
-		<div id="info">
-			*Appointments are unavailable for today's sessions.Please contact Hospital Help-desk for more information.
-		</div>
-	</div>
+			<div id="home">
+				<a href="home">Go back to home</a>
+			</div>
+			<div id="info">
+				* Registration id+state should be filled like if registration id=10041 and register state=WB it should be filled as
+				10041WB
+			</div>
+			<div id="hos">
+				<strong><%=hos%></strong>
+			</div>
+			</div>
 </body>
 
 </html>
