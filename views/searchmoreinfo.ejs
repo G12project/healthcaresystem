@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -12,19 +13,14 @@
 		height: 100vh;
 		width: 100%;
 	}
-
 	.issmart1 {
 		background-color: black;
 		color: white;
-
 	}
-
 	.issmart2 {
-		background-color: #5bc0de;
+		background-color: white;
 		color: black;
-
 	}
-
 	.t1 {
 		margin: auto;
 		width: 90%;
@@ -35,22 +31,32 @@
 		width:60%;
 		color:beige;
 	}
-
 	.isbomb {
-		padding: 30px 30px 20px 20px;
+		padding: 0px 30px 20px 20px;
 	}
-
 	.iwfr {
-		padding: 50px 5px 20px 20px;
+		padding: 0px 5px 20px 20px;
 	}
 	.fine{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: #428bca;
 		padding-left: 180px;
 		margin: auto;
+		color: white;
 	}
-
+	#img{
+		background-color: black;
+	}
+	img{
+		height: 50px;
+	}
 </style>
 
 <body>
+	<div id="img">
+	<img src="https://static1.squarespace.com/static/58c6fc4a37c581154f75cdd2/t/58e662456a496356f0430f90/1604006272177/">
+</div>
 	<div class="fine">
 		<h1><%=user4[0].name %></h1>
 	</div>
@@ -86,7 +92,7 @@
 					<%if(data.day==curd || data.capcnt==0){ %>
 						<td>Appointment Unavailable</td>
 					<%} else{ %>
-					<td><button type="submit">Book an appointment</button></td>
+					<td><button type="submit" class="btn btn-success">Book an appointment</button></td>
 					<%}%>
 				</form>
 			</tr>
@@ -134,3 +140,4 @@
 			</div>
 		</div>
 </body>
+
