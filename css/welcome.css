@@ -1,0 +1,33 @@
+
+	
+		body{
+	margin: auto;
+	padding: 80px 40px 20px 40px;
+	width: 50%;
+	background-color: black;
+}
+	#jyoloveu{
+		margin: auto;
+		background-color: #5bc0de;
+		padding: 30px 20px 30px 20px;
+	}
+	#jyoiscute{
+		margin: auto;
+		
+		 font-size: 70px;
+ 	
+		 padding: 5px 5px 5px 5px;
+		 
+	}
+
+	h1{
+		color: red;
+		font-size: 50px;
+	}
+	
+	p{
+		font-size: 20px;
+	}
+
+
+
