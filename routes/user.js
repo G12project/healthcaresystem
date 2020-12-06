@@ -11,7 +11,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "username",
   password: "**********",
-  database: "WMP"
+  database: "database_name"
 });
 con.query("Set global event_scheduler=ON", function(err){
   if(err) throw err;
