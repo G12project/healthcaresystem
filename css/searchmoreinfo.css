@@ -1,0 +1,43 @@
+	.leftside,
+	.rightside {
+		height: 100vh;
+		width: 100%;
+	}
+	.issmart1 {
+		background-color: black;
+		color: white;
+	}
+	.issmart2 {
+		background-color: white;
+		color: black;
+	}
+	.t1 {
+		margin: auto;
+		width: 90%;
+		border: 3px solid darkblue;
+	}
+	.t2{
+		margin:auto;
+		width:60%;
+		color:beige;
+	}
+	.isbomb {
+		padding: 0px 30px 20px 20px;
+	}
+	.iwfr {
+		padding: 0px 5px 20px 20px;
+	}
+	.fine{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: #428bca;
+		padding-left: 180px;
+		margin: auto;
+		color: white;
+	}
+	#img{
+		background-color: black;
+	}
+	img{
+		height: 50px;
+	}
