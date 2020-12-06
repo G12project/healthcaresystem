@@ -1,0 +1,29 @@
+	body{
+			margin: auto;
+			width: 100%;
+			padding: 50px 10px 10px 10px;
+			background-color: black;
+		}
+		table{
+			width: 100%;
+		}
+		#container{
+			margin: auto;
+			padding: 20px 20px 10px 20px;
+			background-color: white;
+		}
+		#head{
+			background-color: #5bc0de;
+			padding: 1px 2px 1px 2px;
+			color: white;
+		}
+		img{
+			height: 60px;
+		}
+		#hos{
+			padding-top: 5px;
+			padding-left: 90%;
+		}
+		#info{
+		color: #a6a6a6;
+	}
