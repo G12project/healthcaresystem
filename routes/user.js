@@ -9,8 +9,8 @@ var crypto=require('crypto');
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "root",
+  user: "username",
+  password: "**********",
   database: "WMP"
 });
 con.query("Set global event_scheduler=ON", function(err){
