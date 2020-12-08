@@ -1,0 +1,26 @@
+	
+		body{
+	margin: auto;
+	padding: 80px 40px 20px 40px;
+	width: 100%;
+	background-color: black;
+}
+	#container{
+		margin: auto;
+		background-color: white;
+		padding: 10px 20px 30px 20px;
+	}
+	#head{
+	
+		background-color: #428bca;
+		color: white;
+		padding: 5px 5px 5px 5px;
+	}
+	
+	p{
+		font-size: 20px;
+	}
+	img
+	{
+		height: 60px;
+	}
