@@ -1,0 +1,27 @@
+	body {
+			margin: auto;
+			padding: 50px 30px 10px 10px;
+			width: 95%;
+			background-color: black;
+		}
+		#container {
+			margin: auto;
+			font-size: 15px;
+			background-color: white;
+			padding :15px 10px 10px 10px;
+		}
+		table{
+			width: 100%;
+		}
+		input{
+			border: solid white 1px;
+			width: 100%;
+			
+		}
+		#hos{
+			padding-left: 90%;
+			padding-top: 3px;
+		}
+		img{
+			height: 50px;
+		}
