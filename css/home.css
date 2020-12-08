@@ -1,0 +1,36 @@
+	body {
+		margin: auto;
+		padding: 10px 30px 10px 30px;
+		width: 70%;
+		background-color: black;
+	}
+	#container {
+		margin: auto;
+		font-size: 15px;
+		background-color: white;
+		padding: 10px 10px 10px 10px;
+	}
+	#head {
+		padding: 0.8px 1px 1px 1px;
+		background-color: #428bca;
+		color: white;
+		font-family: 'Open Sans', sans-serif;
+		height: 75px;
+	}
+	#about {
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+		font-family: 'Open Sans', sans-serif;
+	}
+	#href {
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+	}
+	#image{
+		height: 40px;
+	}
+	.buttons{
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+		background-color: white;
+	}
