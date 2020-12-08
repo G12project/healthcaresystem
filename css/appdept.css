@@ -1,0 +1,30 @@
+		body{
+			margin: auto;
+			width: 60%;
+			padding: 50px 10px 10px 10px;
+			background-color: black;
+		}
+		table{
+			width: 100%;
+		}
+		#container{
+			margin: auto;
+			padding: 20px 20px 20px 20px;
+			background-color: white;
+		}
+		input{
+			width: 100%;
+			border: white;
+		}
+		#head{
+			background-color: #5bc0de;
+			padding: 1px 2px 1px 2px;
+			color: white;
+		}
+		img{
+			height: 50px;
+		}
+		#hos{
+			padding-top: 5px;
+			padding-left: 90%;
+		}
