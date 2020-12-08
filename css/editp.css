@@ -1,0 +1,47 @@
+	body {
+		width: 90%;
+		margin: auto;
+		background-color: black;
+		color: white;
+		padding: 50px 20px 20px 50px;
+	}
+
+	#container {
+		background-color: white;
+		padding: 10px 10px 5px 20px;
+	}
+
+	table {
+		width: 100%;
+		color: black;
+		border: solid black 1px;
+	}
+
+	input {
+		color: black;
+		border: solid white 1px;
+		width: 100%;
+	}
+
+	#info {
+		color: #a6a6a6;
+	}
+
+	#hos {
+		padding-top: 1px;
+		padding-left: 90%;
+		color: black;
+	}
+
+	#home {
+		padding-top: 2px;
+	}
+
+	img {
+		height: 50px;
+	}
+	#head {
+			background-color: #428bca;
+			padding: 1px 2px 1px 2px;
+			color: white;
+		}
