@@ -8,6 +8,7 @@ This project facilitates patients to search for healthcare services based on thr
 - doctors 
 - departments 
 - hospitals 
+
 Patients can also book appointments with doctors, wherein, they have to provide some basic details,viz, name, email,etc. and after verification through otp sent to the email provided, appointment booking will be successfull.
 
 All data of different healthcare organisations are provided by the organisations themselves.
