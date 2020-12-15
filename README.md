@@ -16,7 +16,6 @@ All data of different healthcare organisations are provided by the organisations
 - The schedules can be edited and deleted by the hospital/clinic via same account.
 - Login authentication is necessary to access account.
 
-
 This project is made with HTML, CSS, Javascript, NodeJS and MySQL.
 
 # How To Use:
@@ -25,6 +24,7 @@ This project needs the following installations
 - NodeJS
 - MySQL
 - Git
+
 After all above are installed, the following commands need to be used from terminal/command line:
 ```bash
 //Clone this repository
