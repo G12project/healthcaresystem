@@ -44,4 +44,7 @@ $ node ctbverification.js
 $ node cevnts.js
 ```
 
-Note: All names and passwords need to be set accordingly the the files.
+Note: All names and passwords need to be set accordingly in the files.
+
+# Misc
+This project has been prepared for CS207 course, assigned by Dr. Nagendra Kumar, IIT Indore.
