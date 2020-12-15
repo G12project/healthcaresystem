@@ -18,9 +18,9 @@ This project needs the following installations
 - MySQL: https://www.mysql.com/downloads/
 - Git: https://git-scm.com/downloads
 After all above are installed, the following commands need to be used from terminal/command line:
-`//Clone this repository`
-`$ git clone https://github.com/G12project/healthcaresystem`
-`//Go into the repository`
+<p>`//Clone this repository`</p>
+<p>`$ git clone https://github.com/G12project/healthcaresystem`</p>
+<p>`//Go into the repository`</p>
 $ cd healthcaresystem
 //Install dependencies
 $ npm install`
