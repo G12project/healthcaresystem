@@ -18,17 +18,20 @@ This project needs the following installations
 - MySQL: https://www.mysql.com/downloads/
 - Git: https://git-scm.com/downloads
 After all above are installed, the following commands need to be used from terminal/command line:
-<p>`//Clone this repository`</p>
-<p>`$ git clone https://github.com/G12project/healthcaresystem`</p>
-<p>`//Go into the repository`</p>
+```bash
+//Clone this repository
+$ git clone https://github.com/G12project/healthcaresystem
+//Go into the repository
 $ cd healthcaresystem
 //Install dependencies
-$ npm install`
+$ npm install
+```
 Note: `node` can be used from the command prompt in Windows.
 
 Once the above commands are executed, the following commands must be run once in the given order to setup the database:
 
-`//Go to required directory
+```bash
+//Go to required directory
 $ cd healthcaresystem/mysql
 //Setup DB
 $ node cdb.js
@@ -38,6 +41,7 @@ $ node ctbdoc.js
 $ node ctbschd.js
 $ node ctbappnts.js
 $ node ctbverification.js
-$ node cevnts.js`
+$ node cevnts.js
+```
 
 Note: All names and passwords need to be set accordingly the the files.
