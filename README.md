@@ -4,9 +4,17 @@
 - Patients will be able to make appointments from home hassle-free saving the work, money and time before seeing a doctor. No more long queues:)
 
 # Key Features:
-This project facilitates patients to search for healthcare services based on three different categories, namely, doctors, departments and hospitals. Patients can also book appointments with doctors, wherein, they have to provide some basic details,viz, name, email,etc. and after verification through otp sent to the email provided, appointment booking will be successfull.
+This project facilitates patients to search for healthcare services based on three different categories, namely,
+- doctors 
+- departments 
+- hospitals 
+Patients can also book appointments with doctors, wherein, they have to provide some basic details,viz, name, email,etc. and after verification through otp sent to the email provided, appointment booking will be successfull.
 
-All data of different healthcare organisations are provided by the organisations themselves. All healthcare organisations will have to register. Registration with the portal provides an single organisation account where it can provide all schedules. The schedules can be edited and deleted by the hospital/clinic via same account. Login authentication is necessary to access account.
+All data of different healthcare organisations are provided by the organisations themselves.
+- All healthcare organisations will have to register. 
+- Registration with the portal provides an single organisation account where it can provide all schedules. 
+- The schedules can be edited and deleted by the hospital/clinic via same account.
+- Login authentication is necessary to access account.
 
 
 This project is made with HTML, CSS, Javascript, NodeJS and MySQL.
@@ -14,9 +22,9 @@ This project is made with HTML, CSS, Javascript, NodeJS and MySQL.
 # How To Use:
 
 This project needs the following installations
-- NodeJS :https://nodejs.org/en/
-- MySQL: https://www.mysql.com/downloads/
-- Git: https://git-scm.com/downloads
+- NodeJS
+- MySQL
+- Git
 After all above are installed, the following commands need to be used from terminal/command line:
 ```bash
 //Clone this repository
